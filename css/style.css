@@ -5,3 +5,33 @@ body {
 .sm-header{
   background-color: bisque;
 }
+
+.sm-nav-right{
+  max-height: 60px;
+}
+.sm-nav-right > ul > li > a {
+  min-height: 60px;
+}
+
+.sm-toggle {
+  min-height: 60px;
+}
+.sm-toggle > a {
+  min-height: 60px;
+}
+
+.sm-sidebar-menu{
+  border: 0px;
+  border-bottom-width: 1px;
+  border-color: aliceblue;
+  border-style: solid;
+  margin-top: 5px;
+  padding-left: 10px;
+}
+.sm-sidebar-menu > ul {
+  padding-left: 10px;
+}
+
+.sm-menu-list > li > a {
+  padding-top: 0px;
+}

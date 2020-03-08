@@ -12,29 +12,7 @@
 
   <body>
     <!-- ナビゲーションバー -->
-    <div class="uk-container uk-container-expand sm-header" uk-sticky>
-      <nav class="uk-navbar">
-        <!-- 左寄せnavbarブロック -->
-        <div class="uk-navbar-left">
-          <ul class="uk-nav uk-nav-default">
-            <li class="uk-active">
-              <!-- h3で入るマージンを削除 -->
-              <a class="uk-h3 uk-margin-remove">
-              <img data-src="images/logo.png" uk-img>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <!-- 右寄せnavbarブロック -->
-        <div class="uk-navbar-right">
-          <!-- レスポンシブでMサイズ以下は表示しないページリンク -->
-          <ul class="uk-navbar-nav uk-visible@m">
-          </ul>
-          <!-- mサイズ以下になったら、ページリンクを再度バーとして表示するためのトグル -->
-          <a uk-navbar-toggle-icon="" href="#sideMenu" uk-toggle="target: #sideMenu" class="uk-navbar-toggle uk-hidden@m uk-icon uk-navbar-toggle-icon"></a>
-        </div>
-      </nav>
-    </div>
+    <?php include("components/header.php"); ?>
 
     <!-- 本体 -->
     <div class="uk-container uk-container-expand">
@@ -53,8 +31,6 @@
             <div class="uk-card uk-card-default uk-card-body uk-margin-bottom">書籍エリア2</div>
           </div>
         </div>
-
-
       </div>
     </div>
 
