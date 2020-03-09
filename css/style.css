@@ -1,7 +1,3 @@
-body {
-  background-image: url("../images/background.jpg");
-}
-
 .sm-header{
   background-color: bisque;
 }
@@ -34,4 +30,19 @@ body {
 
 .sm-menu-list > li > a {
   padding-top: 0px;
+}
+
+.sm-book-area{
+  width: 710px;
+  min-width: 710px;
+}
+
+.sm-book {
+  width: 110px;
+  min-width: 110px;
+}
+
+.sm-genre-area {
+  width: 150px;
+  min-width: 150px;
 }
