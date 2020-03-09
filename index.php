@@ -25,11 +25,8 @@
           <div class="uk-width-1-5 uk-visible@m">
             <div class="uk-card uk-card-default uk-card-body">ジャンル</div>
           </div>
-          <!-- 書籍エリアは動的に作る -->
-          <div class="uk-width-expand uk-flex uk-flex-column">
-            <div class="uk-card uk-card-default uk-card-body uk-margin-bottom">書籍エリア1</div>
-            <div class="uk-card uk-card-default uk-card-body uk-margin-bottom">書籍エリア2</div>
-          </div>
+          <!-- 書籍エリア -->
+          <?php include("components/bookArea.php"); ?>
         </div>
       </div>
     </div>
