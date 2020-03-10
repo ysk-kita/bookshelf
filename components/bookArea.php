@@ -9,7 +9,7 @@
             <a class="uk-button uk-button-default uk-height-small sm-book" href="#book-1" uk-toggle>本1</a>
           </div>
           <div class="uk-card-footer uk-padding-remove sm-book">
-            <a href="#book-1" class="uk-button uk-button-text uk-width-1-1">Read more</a>
+            <a href="#book-1" class="uk-button uk-padding-remove uk-width-1-1" uk-toggle>Read more</a>
           </div>
         </div>
         <div>
@@ -17,7 +17,7 @@
             <a class="uk-button uk-button-default uk-height-small sm-book" href="#book-1" uk-toggle>本2</a>
           </div>  
           <div class="uk-card-footer uk-padding-remove sm-book">
-            <a href="#book-1" class="uk-button uk-button-text uk-width-1-1">Read more</a>
+            <a href="#book-1" class="uk-button uk-padding-remove uk-width-1-1" uk-toggle>Read more</a>
           </div>
         </div>
         <div>
@@ -25,7 +25,7 @@
             <a class="uk-button uk-button-default uk-height-small sm-book" href="#book-1" uk-toggle>本3</a>
           </div>
           <div class="uk-card-footer uk-padding-remove sm-book">
-            <a href="#book-1" class="uk-button uk-button-text uk-width-1-1">Read more</a>
+            <a href="#book-1" class="uk-button uk-padding-remove uk-width-1-1" uk-toggle>Read more</a>
           </div>
         </div>
         <div>
@@ -33,7 +33,7 @@
             <a class="uk-button uk-button-default uk-height-small sm-book" href="#book-1" uk-toggle>本4</a>
           </div>
           <div class="uk-card-footer uk-padding-remove sm-book">
-            <a href="#book-1" class="uk-button uk-button-text uk-width-1-1">Read more</a>
+            <a href="#book-1" class="uk-button uk-padding-remove uk-width-1-1" uk-toggle>Read more</a>
           </div>
         </div>
         <div>
@@ -41,14 +41,16 @@
             <a class="uk-button uk-button-default uk-height-small sm-book" href="#book-1" uk-toggle>本5</a>
           </div>
           <div class="uk-card-footer uk-padding-remove sm-book">
-            <a href="#book-1" class="uk-button uk-button-text uk-width-1-1">Read more</a>
+            <a href="#book-1" class="uk-button uk-padding-remove uk-width-1-1" uk-toggle>Read more</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="uk-card uk-card-default uk-card-body uk-margin-bottom  sm-book-area">
-    書籍エリア2
+  <div class="uk-card uk-card-default uk-card-body uk-margin-bottom sm-book-area">
+    
+    
+    
   </div>
 </div>
 
