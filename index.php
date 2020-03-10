@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="css/uikit.min.css"/>
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="css/style.css"/>
+    
     <link rel="stylesheet" href="css/swiper.css">
     <script src="js/swiper.js"></script>
     
+    <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="js/script.js"></script>
   </head>
 
   <body class="uk-background-cover" data-src="images/background.jpg" uk-img>
