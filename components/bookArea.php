@@ -10,18 +10,23 @@
 
 <div class="uk-width-expand uk-flex uk-flex-column">
   <!-- 書籍エリア1 -->
+  <h4 class="uk-margin-remove">現在注目中の書籍</h4>
   <div class="uk-card uk-card-default uk-card-body uk-margin-bottom uk-padding-remove-horizontal sm-book-area">
     <div class="uk-flex uk-flex-center">
       <div class="uk-grid-small" uk-grid>
         <?php 
           for($i=0;$i<5; $i++){
-            include("components/bookTitle.php");   
+            // 書籍情報読込
+            include("components/bookTitle.php");
+            // モーダル読込
+            include("components/modalWindow.php");
           }
         ?>
       </div>
     </div>
   </div>
   <!-- 書籍エリア2 -->
+  <h4 class="uk-margin-remove">新着の書籍エリア</h4>
   <div class="uk-card uk-card-default uk-card-body uk-margin-bottom sm-book-area">
     <div class="swiper-container">
       <div class="swiper-wrapper">
@@ -53,5 +58,3 @@
   });
 </script>
 
-<!-- モーダル読込 -->
-<?php include("components/modalWindow.php"); ?>

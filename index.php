@@ -16,6 +16,8 @@
   </head>
 
   <body class="uk-background-cover" data-src="images/background.jpg" uk-img>
+    <?php include("components/function.php"); ?>
+    
     <!-- ナビゲーションバー -->
     <?php include("components/header.php"); ?>
 
