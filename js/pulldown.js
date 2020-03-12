@@ -1,3 +1,8 @@
+/**
+  下記より引用
+  https://kodocode.net/design-css-selectlist/
+**/
+
 $(function(){
   $(".custom-select").each(function() {
     var classes = $(this).attr("class"),
@@ -10,7 +15,7 @@ $(function(){
           template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
         });
     template += '</div></div>';
-    
+
     $(this).wrap('<div class="custom-select-wrapper"></div>');
     $(this).hide();
     $(this).after(template);
@@ -44,10 +49,3 @@ $(function(){
     $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
   });
 });
-
-$(function(){
-  $("#button").on("click", function() {
-    alert("クリックされました");
-  });
-});
-
