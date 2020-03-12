@@ -17,15 +17,15 @@
   display: inline-block;
 }
 .custom-select-trigger {
-  
+  text-align: center;
   display: block;
-  width: 130px;
-  padding: 0 84px 0 22px;
+  width: 100px;
+  padding: 0 20px 0 20px;
   font-size: 22px;
   font-weight: 300;
-  color: #fff;
+  color: black;
   line-height: 60px;
-  background: #5c9cd8;
+  background: papayawhip;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -36,8 +36,8 @@
   width: 10px; height: 10px;
   top: 50%; right: 25px;
   margin-top: -3px;
-  border-bottom: 1px solid #fff;
-  border-right: 1px solid #fff;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
   transform: rotate(45deg) translateY(-50%);
   transition: all .4s ease-in-out;
   transform-origin: 50% 0;
