@@ -46,3 +46,26 @@
   width: 150px;
   min-width: 150px;
 }
+
+.sm-synopsis{
+  width: 450px;
+  min-width: 450px;
+  max-width: 450px;
+}
+
+.sm-genre-search-books{
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+}
+
+.sm-divider {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px;
+  border-style: solid;
+  margin: 30px;
+  border-color: gainsboro;
+
+}

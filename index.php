@@ -25,7 +25,6 @@
 
     <!-- ナビゲーションバー -->
     <?php include("components/header.php"); ?>
-
     <!-- 本体 -->
     <div class="uk-container uk-container-expand">
       <div>
@@ -33,12 +32,15 @@
           Kita-Booksは無料で書籍を読めるサイトになっております。ごゆっくりご閲覧ください。
         </p>
         <div class="uk-flex uk-flex-center">
-          <!-- ジャンルエリア -->
+          <!-- ジャンル一覧エリア -->
           <?php include("components/genre.php"); ?>
           <!-- 書籍エリア -->
-          <div class="uk-margin-left">
+          <div class="">
             <?php include("components/bookArea.php"); ?>
           </div>
+        </div>
+        <div class="uk-flex uk-flex-center uk-margin-medium-top">
+          <?php include("components/genreSearch.php"); ?>
         </div>
       </div>
     </div>
