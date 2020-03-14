@@ -45,6 +45,7 @@
 .sm-genre-area {
   width: 150px;
   min-width: 150px;
+  box-shadow: 0px
 }
 
 .sm-synopsis{
@@ -68,4 +69,10 @@
   margin: 30px;
   border-color: gainsboro;
 
+}
+
+.sm-area-label{
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom: 1px solid white;
 }

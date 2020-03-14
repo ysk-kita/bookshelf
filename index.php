@@ -33,6 +33,7 @@
         </p>
         <div class="uk-flex uk-flex-center">
           <!-- ジャンル一覧エリア -->
+
           <?php include("components/genre.php"); ?>
           <!-- 検索結果エリア -->
           <?php include("components/genreSearch.php"); ?>
