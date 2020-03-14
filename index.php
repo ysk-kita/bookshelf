@@ -34,13 +34,14 @@
         <div class="uk-flex uk-flex-center">
           <!-- ジャンル一覧エリア -->
           <?php include("components/genre.php"); ?>
+          <!-- 検索結果エリア -->
+          <?php include("components/genreSearch.php"); ?>
+        </div>
+        <div class="uk-flex uk-flex-center uk-margin-medium-top">
           <!-- 書籍エリア -->
           <div class="">
             <?php include("components/bookArea.php"); ?>
           </div>
-        </div>
-        <div class="uk-flex uk-flex-center uk-margin-medium-top">
-          <?php include("components/genreSearch.php"); ?>
         </div>
       </div>
     </div>

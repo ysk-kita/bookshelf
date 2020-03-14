@@ -1,7 +1,7 @@
 /**
   下記より引用
   https://kodocode.net/design-css-selectlist/
-**/
+*/
 
 $(function(){
   $(".custom-select").each(function() {
