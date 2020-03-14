@@ -41,8 +41,9 @@
     <div class="sm-sidebar-menu">
       <p class="uk-margin-remove">書籍分類</p>
       <ul class="uk-nav uk-nav-default sm-menu-list">
-        <li class="uk-active"><a href="#">ジャンル1</a></li>
-        <li class="uk-active"><a href="#">ジャンル2</a></li>
+        <li class="uk-active genre-selector" genre-id="genre-capture"><a>攻略本</a></li>
+        <li class="uk-active genre-selector" genre-id="genre-reference"><a>参考書</a></li>
+        <li class="uk-active genre-selector" genre-id="genre-another"><a>その他</a></li>
       </ul>
     </div>
   </div>
