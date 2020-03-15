@@ -4,7 +4,6 @@
   </h4>
   <div class="uk-card uk-card-default uk-card-body uk-margin-bottom uk-padding-remove-horizontal uk-padding-remove-bottom sm-book-area uk-flex uk-flex-column">
 
-
     <div class="uk-flex uk-flex-column book-genre-select" id="genre-all">
       <!-- ジャンル詳細 -->
       <div class="uk-flex uk-flex-left uk-margin-large-left sm-genre-search-books">
@@ -88,9 +87,31 @@
       <div class="sm-divider"></div>
     </div>
 
+    <div class="uk-flex uk-flex-column book-genre uk-hidden" id="genre-another">
+      <!-- ジャンル詳細 -->
+      <div class="uk-flex uk-flex-left uk-margin-large-left sm-genre-search-books">
+        <div class="uk-flex">
+          <div class="uk-card uk-card-default uk-card-body uk-padding-remove sm-book uk-height-small uk-margin-right">
+            本表紙
+          </div>
+          <div class="uk-flex uk-flex-column uk-flex-between">
+            <div class="uk-margin-bottom">タイトル</div>
+            <div class="uk-margin-bottom">
+              <p class="sm-synopsis">トムラッシュ...もう疲れたよ...</p>
+            </div>
+            <div class="uk-margin-auto-left">
+              <button class="uk-button uk-button-default">作品ページへ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sm-divider"></div>
+    </div>
+
+
     <!-- ループの最後を出力した後に詳細リンクを作る -->
     <div class="uk-margin-right uk-margin-auto-left">
-      <a class="uk-button uk-padding-remove uk-width-1-1" href="">ジャンル詳細へ</a>
+      <a id="genre-link" class="uk-button uk-padding-remove uk-width-1-1" href="/genreList.php?genre=all">ジャンル詳細へ</a>
     </div>
   </div>
 </div>

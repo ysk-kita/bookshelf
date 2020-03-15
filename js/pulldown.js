@@ -60,13 +60,21 @@ $(function(){
 
     // 指定したジャンルの本一覧に切り替え
     var afterGenreId = '#' + $(this).attr('genre-id');
-    var genreLabelValue = 'ジャンル：' + $(this).attr('genre-text');
-    var genreLabel = $('#genre-label');
-    genreLabel.html(genreLabelValue);
-
     var afterGenre = $(afterGenreId);
     afterGenre.removeClass("book-genre");
     afterGenre.removeClass("uk-hidden");
     afterGenre.addClass("book-genre-select");
+
+    // ジャンル切り替えに伴う表記・リンク先修正
+    // ラベル
+    var genreLabelValue = 'ジャンル：' + $(this).attr('genre-text');
+    var genreLabel = $('#genre-label');
+    genreLabel.html(genreLabelValue);
+    // リンク先
+    var genreLink = $('#genre-link');
+    var genreId = afterGenreId.split('-')[1];
+    var genreHref = '/genreList.php?genre=' + genreId;
+    genreLink.attr('href', genreHref);
+
   });
 });

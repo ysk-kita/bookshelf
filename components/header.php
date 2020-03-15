@@ -5,7 +5,7 @@
       <ul class="uk-nav uk-nav-default">
         <li class="uk-active">
           <!-- h3で入るマージンを削除 -->
-          <a class="uk-h3 uk-margin-remove">
+          <a class="uk-h3 uk-margin-remove" href="/">
           <img data-src="images/logo.png" uk-img>
           </a>
         </li>
@@ -14,8 +14,8 @@
     <!-- 右寄せnavbarブロック -->
     <div class="uk-navbar-right sm-nav-right">
       <ul class="uk-navbar-nav uk-visible@m uk-height-1-1">
-        <li class="uk-active"><a href="#"><span class="uk-button uk-button-text">会員登録</span></a></li>
-        <li class="uk-active"><a href="#"><span class="uk-button uk-button-text">ログイン</span></a></li>
+        <li class="uk-active"><a href="/signUp.php"><span class="uk-button uk-button-text">会員登録</span></a></li>
+        <li class="uk-active"><a href="/signIn.php"><span class="uk-button uk-button-text">ログイン</span></a></li>
       </ul>
       <!-- mサイズ以下になったら、ページリンクを再度バーとして表示するためのトグル -->
       <div class="uk-navbar-left uk-hidden@m uk-height-1-1 sm-toggle">
