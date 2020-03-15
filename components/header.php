@@ -14,8 +14,17 @@
     <!-- 右寄せnavbarブロック -->
     <div class="uk-navbar-right sm-nav-right">
       <ul class="uk-navbar-nav uk-visible@m uk-height-1-1">
-        <li class="uk-active"><a href="/signUp.php"><span class="uk-button uk-button-text">会員登録</span></a></li>
-        <li class="uk-active"><a href="/signIn.php"><span class="uk-button uk-button-text">ログイン</span></a></li>
+        <?php
+          // $isSignIn = $_SESSION['sign-in'];
+          $isSignIn = false;
+          if($isSignIn){
+            print '<li class="uk-active"><a href="/myPage.php"><span class="uk-button uk-button-text">マイページ</span></a></li>';
+            print '<li class="uk-active"><a href="/signOut.php"><span class="uk-button uk-button-text">ログアウト</span></a></li>';
+          } else {
+            print '<li class="uk-active"><a href="/signUp.php"><span class="uk-button uk-button-text">会員登録</span></a></li>';
+            print '<li class="uk-active"><a href="/signIn.php"><span class="uk-button uk-button-text">ログイン</span></a></li>';
+          }
+        ?>
       </ul>
       <!-- mサイズ以下になったら、ページリンクを再度バーとして表示するためのトグル -->
       <div class="uk-navbar-left uk-hidden@m uk-height-1-1 sm-toggle">
@@ -34,8 +43,15 @@
     <div class="sm-sidebar-menu">
       <p class="uk-margin-remove">会員機能</p>
       <ul class="uk-nav uk-nav-default sm-menu-list">
-        <li class="uk-active"><a href="#">会員登録</a></li>
-        <li class="uk-active"><a href="#">ログイン</a></li>
+        <?php
+          if($isSignIn){
+            print '<li class="uk-active"><a href="/myPage.php"><span class="uk-button uk-button-text">マイページ</span></a></li>';
+            print '<li class="uk-active"><a href="/signOut.php"><span class="uk-button uk-button-text">ログアウト</span></a></li>';
+          } else {
+            print '<li class="uk-active"><a href="/signUp.php"><span class="uk-button uk-button-text">会員登録</span></a></li>';
+            print '<li class="uk-active"><a href="/signIn.php"><span class="uk-button uk-button-text">ログイン</span></a></li>';
+          }
+        ?>
       </ul>
     </div>
     <div class="sm-sidebar-menu">
