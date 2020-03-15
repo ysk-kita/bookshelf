@@ -1,6 +1,8 @@
 <div class="uk-width-expand uk-flex uk-flex-column">
   <!-- 書籍エリア1 -->
-  <h4 class="uk-margin-remove">現在注目中の書籍</h4>
+  <h4 class="uk-margin-remove">
+    <span class="sm-area-label uk-background-default">現在注目中の書籍</span>
+  </h4>
   <div class="uk-card uk-card-default uk-card-body uk-margin-bottom uk-padding-remove-horizontal sm-book-area">
     <div class="uk-flex uk-flex-center">
       <div class="uk-grid-small" uk-grid>
@@ -16,7 +18,9 @@
     </div>
   </div>
   <!-- 書籍エリア2 -->
-  <h4 class="uk-margin-remove">新着の書籍エリア</h4>
+  <h4 class="uk-margin-remove">
+    <span class="sm-area-label uk-background-default">新着の書籍エリア</span>
+  </h4>
   <div class="uk-card uk-card-default uk-card-body uk-margin-bottom sm-book-area">
     <div class="swiper-container">
       <div class="swiper-wrapper">
