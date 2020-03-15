@@ -1,6 +1,6 @@
 <div>
   <h4 class="uk-margin-remove">
-    <span class="sm-area-label uk-background-default">ジャンル：総合</span>
+    <span class="sm-area-label uk-background-default" id="genre-label">ジャンル：総合　</span>
   </h4>
   <div class="uk-card uk-card-default uk-card-body uk-margin-bottom uk-padding-remove-horizontal uk-padding-remove-bottom sm-book-area uk-flex uk-flex-column">
 

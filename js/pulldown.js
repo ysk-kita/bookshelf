@@ -12,7 +12,7 @@ $(function(){
         template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
         template += '<div class="custom-options">';
         $(this).find("option").each(function() {
-          template += '<span class="genre-selector custom-option ' + $(this).attr("class") + '"genre-id="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+          template += '<span class="genre-selector custom-option ' + $(this).attr("class") + '"genre-text="' + $(this).attr("genre-text") + '"genre-id="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
         });
     template += '</div></div>';
 
@@ -60,11 +60,13 @@ $(function(){
 
     // 指定したジャンルの本一覧に切り替え
     var afterGenreId = '#' + $(this).attr('genre-id');
+    var genreLabelValue = 'ジャンル：' + $(this).attr('genre-text');
+    var genreLabel = $('#genre-label');
+    genreLabel.html(genreLabelValue);
+
     var afterGenre = $(afterGenreId);
     afterGenre.removeClass("book-genre");
     afterGenre.removeClass("uk-hidden");
     afterGenre.addClass("book-genre-select");
   });
-
-
 });
