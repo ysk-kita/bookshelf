@@ -1,7 +1,10 @@
+html {
+  height: 100%;
+}
+
 .sm-header{
   background-color: bisque;
 }
-
 .sm-nav-right{
   max-height: 60px;
 }
@@ -75,4 +78,31 @@
   padding-left: 15px;
   padding-right: 15px;
   border-bottom: 1px solid white;
+}
+
+.sm-sign-menu-area {
+  border: 2px solid white;
+  height: 100%;
+}
+
+.sm-sign-menu-area > ul > li > label {
+  margin-left: 20px;
+  margin-right: 30px;
+}
+
+.sm-sign-menu-body {
+  height: 100%;
+}
+
+.sm-require-label{
+  padding-bottom: 2px;
+  padding-top: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
+  background-color: crimson;
+  color: white;
+}
+
+.sm-terms-modal {
+  border: 1px solid;
 }
