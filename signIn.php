@@ -24,7 +24,7 @@
     <div class="uk-container uk-container-expand">
       <div class="uk-flex uk-flex-center uk-margin-large-top">
         <span class="sm-sign-menu-area uk-background-default">
-          <form class="uk-form-horizontal" action="/" method="POST">
+          <form class="uk-form-horizontal" action="/signInProcess.php" method="POST">
             <h4 class="uk-margin-small-top uk-margin-remove-bottom uk-margin-small-left">ログイン</h4>
 
             <div class="uk-margin-left uk-margin-small-top uk-margin-right uk-margin-small-bottom">
