@@ -30,14 +30,14 @@
             <div class="uk-margin-left uk-margin-small-top uk-margin-right uk-margin-small-bottom">
               <label class="uk-form-label">ユーザーID</label>
               <div class="uk-form-controls">
-                <input class="uk-input" id="form-stacked-text" type="text" placeholder="sign in id">
+                <input class="uk-input" id="form-stacked-text" type="text" placeholder="sign in id" name="id">
               </div>
             </div>
 
             <div class="uk-margin-left uk-margin-bottom uk-margin-right">
             <label class="uk-form-label">パスワード</label>
               <div class="uk-form-controls">
-                <input class="uk-input" placeholder="password..." type="password">
+                <input class="uk-input" placeholder="password..." type="password" name="password">
               </div>
             </div>
 

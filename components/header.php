@@ -15,8 +15,7 @@
     <div class="uk-navbar-right sm-nav-right">
       <ul class="uk-navbar-nav uk-visible@m uk-height-1-1">
         <?php
-          // $isSignIn = $_SESSION['sign-in'];
-          $isSignIn = false;
+          $isSignIn = isset($_SESSION['sign-in']);
           if($isSignIn){
             print '<li class="uk-active"><a href="/myPage.php"><span class="uk-button uk-button-text">マイページ</span></a></li>';
             print '<li class="uk-active"><a href="/signOut.php"><span class="uk-button uk-button-text">ログアウト</span></a></li>';
