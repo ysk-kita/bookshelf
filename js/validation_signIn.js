@@ -1,23 +1,23 @@
 $(function(){
   // ユーザIDのバリデーション
-  $('.user-id').change(function(){
-    $input = $(this).val();
-
-    if(isEmpty($input.trim())){
-      errors.push('ユーザIdが未入力です');
-    }
-
-    if(!isEmpty(errors)){
-      var errorMsg = '<ul class="uk-list uk-margin-left uk-margin-remove-bottom">';
-      errors.forEach((error)=>{
-        errorMsg += '<li class="uk-margin-small-top">' + error + '</li>'
-      });
-      errorMsg += '</ul>';
-      $('.sm-error-msg').html(errorMsg);
+  $('.user-id-box').change(function(){
+    if(isEmpty($(this).val().trim())){
+      $('.user-id-label').addClass('sm-invalid-label');
+      $(this).addClass('sm-invalid-box');
     } else {
-      $('.sm-error-msg').html('');
+      $('.user-id-label').removeClass('sm-invalid-label')
+      $(this).removeClass('sm-invalid-box');
     }
-
+  });
+  // パスワードエリアのバリデーション
+  $('.password-box').change(function(){
+    if(isEmpty($(this).val().trim())){
+      $('.password-label').addClass('sm-invalid-label');
+      $(this).addClass('sm-invalid-box');
+    } else {
+      $('.password-label').removeClass('sm-invalid-label')
+      $(this).removeClass('sm-invalid-box');
+    }
   });
 });
 

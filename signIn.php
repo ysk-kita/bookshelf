@@ -33,16 +33,16 @@ session_start();
             <h4 class="uk-margin-small-top uk-margin-remove-bottom uk-margin-small-left">ログイン</h4>
             <div class="sm-error-msg"></div>
             <div class="uk-margin-left uk-margin-small-top uk-margin-right uk-margin-small-bottom">
-              <label class="uk-form-label">ユーザーID</label>
+              <label class="uk-form-label user-id-label">ユーザーID</label>
               <div class="uk-form-controls">
-                <input class="uk-input user-id" id="form-stacked-text" type="text" placeholder="sign in id" name="signInId">
+                <input class="uk-input user-id-box" id="form-stacked-text" type="text" placeholder="sign in id" name="signInId">
               </div>
             </div>
 
             <div class="uk-margin-left uk-margin-bottom uk-margin-right">
-            <label class="uk-form-label">パスワード</label>
+            <label class="uk-form-label password-label">パスワード</label>
               <div class="uk-form-controls">
-                <input class="uk-input" placeholder="password..." type="password" name="password">
+                <input class="uk-input password-box" placeholder="password..." type="password" name="password">
               </div>
             </div>
 

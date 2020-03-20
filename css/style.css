@@ -110,3 +110,12 @@ html {
 .sm-error-msg > ul {
   color: red;
 }
+
+.sm-invalid-label {
+  color: red;
+  font-weight: bold;
+}
+
+.sm-invalid-box{
+  border-color: red;
+}
