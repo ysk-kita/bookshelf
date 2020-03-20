@@ -1,5 +1,5 @@
 <?php
-$isSignIn = isset($_SESSION['signInId']);
+$isSignIn = isset($_SESSION['signInUser']);
 ?>
 
 <div class="uk-container uk-container-expand sm-header" uk-sticky>

@@ -15,6 +15,8 @@ session_start();
 
     <link rel="stylesheet" href="css/style.css"/>
     <script src="js/terms.js"></script>
+
+    <script src="js/validation_signIn.js"></script>
   </head>
 
   <body class="uk-background-cover sm-sign-menu-body" data-src="images/background.jpg" uk-img>
@@ -29,11 +31,11 @@ session_start();
         <span class="sm-sign-menu-area uk-background-default">
           <form class="uk-form-horizontal" action="/signInProcess.php" method="POST">
             <h4 class="uk-margin-small-top uk-margin-remove-bottom uk-margin-small-left">ログイン</h4>
-
+            <div class="sm-error-msg"></div>
             <div class="uk-margin-left uk-margin-small-top uk-margin-right uk-margin-small-bottom">
               <label class="uk-form-label">ユーザーID</label>
               <div class="uk-form-controls">
-                <input class="uk-input" id="form-stacked-text" type="text" placeholder="sign in id" name="signInId">
+                <input class="uk-input user-id" id="form-stacked-text" type="text" placeholder="sign in id" name="signInId">
               </div>
             </div>
 

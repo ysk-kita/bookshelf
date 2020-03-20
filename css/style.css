@@ -106,3 +106,7 @@ html {
 .sm-terms-modal {
   border: 1px solid;
 }
+
+.sm-error-msg > ul {
+  color: red;
+}
