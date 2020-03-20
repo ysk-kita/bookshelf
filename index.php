@@ -1,4 +1,9 @@
-<?php session_start() ?>
+<?php
+session_start();
+
+// php関数定義ファイル読み込み
+require("components/function.php");
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,9 +26,6 @@
   </head>
 
   <body class="uk-background-cover" data-src="images/background.jpg" uk-img>
-    <!-- php関数定義ファイル読み込み -->
-    <?php include("components/function.php"); ?>
-
     <!-- ナビゲーションバー -->
     <?php include("components/header.php"); ?>
     <!-- 本体 -->

@@ -1,3 +1,7 @@
+<?php
+$isSignIn = isset($_SESSION['signInId']);
+?>
+
 <div class="uk-container uk-container-expand sm-header" uk-sticky>
   <nav class="uk-navbar">
     <!-- 左寄せnavbarブロック -->
@@ -15,10 +19,9 @@
     <div class="uk-navbar-right sm-nav-right">
       <ul class="uk-navbar-nav uk-visible@m uk-height-1-1">
         <?php
-          $isSignIn = isset($_SESSION['sign-in']);
           if($isSignIn){
             print '<li class="uk-active"><a href="/myPage.php"><span class="uk-button uk-button-text">マイページ</span></a></li>';
-            print '<li class="uk-active"><a href="/signOut.php"><span class="uk-button uk-button-text">ログアウト</span></a></li>';
+            print '<li class="uk-active"><a href="/signOutProcess.php"><span class="uk-button uk-button-text">ログアウト</span></a></li>';
           } else {
             print '<li class="uk-active"><a href="/signUp.php"><span class="uk-button uk-button-text">会員登録</span></a></li>';
             print '<li class="uk-active"><a href="/signIn.php"><span class="uk-button uk-button-text">ログイン</span></a></li>';
@@ -45,7 +48,7 @@
         <?php
           if($isSignIn){
             print '<li class="uk-active"><a href="/myPage.php"><span class="uk-button uk-button-text">マイページ</span></a></li>';
-            print '<li class="uk-active"><a href="/signOut.php"><span class="uk-button uk-button-text">ログアウト</span></a></li>';
+            print '<li class="uk-active"><a href="/signOutProcess.php"><span class="uk-button uk-button-text">ログアウト</span></a></li>';
           } else {
             print '<li class="uk-active"><a href="/signUp.php"><span class="uk-button uk-button-text">会員登録</span></a></li>';
             print '<li class="uk-active"><a href="/signIn.php"><span class="uk-button uk-button-text">ログイン</span></a></li>';

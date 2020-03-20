@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,7 +33,7 @@
             <div class="uk-margin-left uk-margin-small-top uk-margin-right uk-margin-small-bottom">
               <label class="uk-form-label">ユーザーID</label>
               <div class="uk-form-controls">
-                <input class="uk-input" id="form-stacked-text" type="text" placeholder="sign in id" name="id">
+                <input class="uk-input" id="form-stacked-text" type="text" placeholder="sign in id" name="signInId">
               </div>
             </div>
 

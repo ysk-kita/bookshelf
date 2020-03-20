@@ -1,10 +1,8 @@
 <?php
 session_start();
 
-// ポスト取得
-$id = $_POST['signInId'];
-$password = $_POST['password'];
-$_SESSION['signInId'] = $id;
+// ログインセッションを削除
+unset($_SESSION['signInId']);
 
 // ログイン処理に成功したのでtopに遷移させる
 header('Location:/index.php');
