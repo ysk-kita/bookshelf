@@ -72,16 +72,16 @@
         <button class="uk-modal-close-default" type="button" uk-close></button>
         <div class="uk-flex uk-flex-column">
           <h4 class="uk-flex uk-flex-center">Kita-books利用規約</h4>
-          <div class="sm-terms-modal uk-margin-bottom uk-flex uk-flex-column">
+          <div class="sm-terms-modal uk-margin-bottom uk-flex uk-flex-column uk-panel uk-panel-scrollable">
             <!-- これはphpでいい感じにする -->
             <span class="uk-margin-small-left uk-margin-small-right uk-margin-small-top">
-              1.アカウントを作ることで特にあなたにデメリットはありません
+              1.アカウントを作ると一部機能が開放されます
             </span>
             <span class="uk-margin-small-left uk-margin-small-right">
               2.Web公開に合わせてこの機能は停止します。(個人情報保護法対策)
             </span>
             <span class="uk-margin-small-left uk-margin-small-right">
-              3.ログイン専用後のページを確認するには下記のユーザーを利用してください
+              3.ログイン後のページを確認するには下記のユーザーを利用してください
             </span>
             <span class="uk-margin-left uk-margin-small-right">
               user-id: test001 / password: pass
@@ -89,8 +89,26 @@
             <span class="uk-margin-small-left uk-margin-small-right">
               4.同意するボタンを押下するとチェックされます
             </span>
-            <span class="uk-margin-small-left uk-margin-small-right uk-margin-small-bottom">
+            <span class="uk-margin-small-left uk-margin-small-right">
               5.同意しないボタンを押下するとチェックが外れます
+            </span>
+            <span class="uk-margin-small-left uk-margin-small-right">
+              6.会員登録ボタンを推すと上述のテストユーザでログインされます。
+            </span>
+            <span class="uk-margin-small-left uk-margin-small-right">
+              x.スクロールバー用の行埋め
+            </span>
+            <span class="uk-margin-small-left uk-margin-small-right">
+              x.スクロールバー用の行埋め
+            </span>
+            <span class="uk-margin-small-left uk-margin-small-right">
+              x.スクロールバー用の行埋め
+            </span>
+            <span class="uk-margin-small-left uk-margin-small-right">
+              x.スクロールバー用の行埋め
+            </span>
+            <span class="uk-margin-small-left uk-margin-small-right uk-margin-small-bottom">
+              EOF.最後まで呼んでいただきありがとうございます。
             </span>
           </div>
         </div>
