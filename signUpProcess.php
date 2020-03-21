@@ -37,6 +37,8 @@ if($checkResult == $USER_EXIST){
   exit();
 }
 
+/* web公開に辺りサインアップ機能を無効にする
+
 // DB登録を実行
 try {
   insert_account($mysql, $id, $userName, $password);
@@ -44,9 +46,13 @@ try {
   $error = $e->getMessage();
   var_dump($error);
 }
-
 $_SESSION['userName'] = $userName;
 $_SESSION['userId'] = $id;
+*/
+
+$_SESSION['userName'] = 'testユーザ';
+$_SESSION['userId'] = 'test001';
+
 // ログイン処理に成功したのでtopに遷移させる
 header('Location:/index.php');
 exit();
