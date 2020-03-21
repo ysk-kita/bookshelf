@@ -11,7 +11,9 @@
     <script src="js/uikit-icons.min.js"></script>
 
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/tooltip.css"/>
     <script src="js/terms.js"></script>
+    <script src="js/validation.js"></script>
   </head>
 
   <body class="uk-background-cover sm-sign-menu-body" data-src="images/background.jpg" uk-img>
@@ -35,20 +37,22 @@
             </div>
 
             <div class="uk-margin-left uk-margin-small-top uk-margin-right uk-margin-small-bottom">
-              <label class="uk-form-label">ユーザーID
+              <label class="uk-form-label user-id-label">ユーザーID
                 <span class="sm-require-label">必須</span>
               </label>
               <div class="uk-form-controls">
-                <input class="uk-input" id="form-stacked-text" type="text" placeholder="sign in id">
+                <input class="uk-input user-id-box input-hint-user-id" id="form-stacked-text" type="text" placeholder="sign in id">
+                <div id="hint-user-id" class="uk-hidden input-hint">半角英数字の組み合わせ</div>
               </div>
             </div>
 
             <div class="uk-margin-left uk-margin-bottom uk-margin-right">
-            <label class="uk-form-label">パスワード
-              <span class="sm-require-label">必須</span>
-            </label>
+              <label class="uk-form-label password-label">パスワード
+                <span class="sm-require-label">必須</span>
+              </label>
               <div class="uk-form-controls">
-                <input class="uk-input" placeholder="password..." type="password">
+                <input class="uk-input password-box input-hint-password" placeholder="password..." type="password">
+                <div id="hint-password" class="uk-hidden input-hint">半角英数字記号の組み合わせで8文字以上16文字以内</div>
               </div>
             </div>
 

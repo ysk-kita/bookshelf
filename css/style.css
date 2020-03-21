@@ -116,6 +116,10 @@ html {
   font-weight: bold;
 }
 
+.sm-invalid-label > span {
+  font-weight: normal;
+}
+
 .sm-invalid-box{
   border-color: red;
 }

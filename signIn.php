@@ -17,7 +17,7 @@ $id = isset($_SESSION['inputId']) ? $_SESSION['inputId'] : '' ;
     <link rel="stylesheet" href="css/style.css"/>
     <script src="js/terms.js"></script>
 
-    <script src="js/validation_signIn.js"></script>
+    <script src="js/validation.js"></script>
   </head>
 
   <body class="uk-background-cover sm-sign-menu-body" data-src="images/background.jpg" uk-img>

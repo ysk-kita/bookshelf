@@ -1,5 +1,5 @@
 $(function(){
-  // ユーザIDのバリデーション
+  // ユーザIDの未入力チェック
   $('.user-id-box').change(function(){
     if(isEmpty($(this).val().trim())){
       $('.user-id-label').addClass('sm-invalid-label');
@@ -9,7 +9,7 @@ $(function(){
       $(this).removeClass('sm-invalid-box');
     }
   });
-  // パスワードエリアのバリデーション
+  // パスワードエリアの未入力チェック
   $('.password-box').change(function(){
     if(isEmpty($(this).val().trim())){
       $('.password-label').addClass('sm-invalid-label');
@@ -19,6 +19,23 @@ $(function(){
       $(this).removeClass('sm-invalid-box');
     }
   });
+
+  // 入力エリアフォーカスでヒント表示
+  $('.input-hint-password').focusin(function() {
+    $('#hint-password').removeClass('uk-hidden');
+  })
+  .focusout(function() {
+    $('#hint-password').addClass('uk-hidden');
+  });
+
+  $('.input-hint-user-id').focusin(function() {
+    $('#hint-user-id').removeClass('uk-hidden');
+  })
+  .focusout(function() {
+    $('#hint-user-id').addClass('uk-hidden');
+  });
+
+
 });
 
 function isEmpty(val){

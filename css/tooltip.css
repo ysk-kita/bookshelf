@@ -1,0 +1,23 @@
+.input-hint {
+  position: absolute;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 12px;
+  line-height: 1.6em;
+  color: #000;
+  border-radius: 5px;
+  background: sandybrown;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+.input-hint:before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 20px;
+  border: 15px solid transparent;
+  border-top: 15px solid sandybrown;
+  margin-left: -15px;
+  transform: rotateZ(180deg);
+}
