@@ -9,4 +9,5 @@ function getModalId($i){
 function getHref($id){
   print '"#book-' . $id . '"';
 }
+
 ?>

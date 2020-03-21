@@ -1,3 +1,31 @@
+<?php
+session_start();
+$id = '';
+$userName = '';
+$errMsg = '';
+$terms = '0';
+
+// ログイン失敗時に投げられる値のリセット
+if(isset($_SESSION['errorMsg'])) {
+  $errMsg = $_SESSION['errorMsg'];
+  unset($_SESSION['errorMsg']);
+}
+if(isset($_SESSION['inputId']) ){
+  $id = $_SESSION['inputId'];
+  unset($_SESSION['inputId']);
+}
+if(isset($_SESSION['userName']) ){
+  $userName = $_SESSION['userName'];
+  unset($_SESSION['userName']);
+}
+
+if(isset($_SESSION['terms'])){
+  $terms = $_SESSION['terms'];
+  unset($_SESSION['terms']);
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,13 +54,15 @@
     <div class="uk-container uk-container-expand">
       <div class="uk-flex uk-flex-center uk-margin-large-top">
         <span class="sm-sign-menu-area uk-background-default">
-          <form class="uk-form-horizontal" action="/" method="POST">
+          <form class="uk-form-horizontal" id="sign-up" action="/signUpProcess.php" method="POST" autocomplete="off">
             <h4 class="uk-margin-small-top uk-margin-remove-bottom uk-margin-small-left">新規ユーザ作成</h4>
-
+            <div class="uk-margin-left uk-text-danger invalid-list">
+              <?php print $errMsg ?>
+            </div>
             <div class="uk-margin-left uk-margin-right uk-margin-small-top uk-margin-small-bottom">
               <label class="uk-form-label">ユーザー名</label>
               <div class="uk-form-controls">
-                <input class="uk-input" id="form-stacked-text" type="text" placeholder="display name">
+                <input class="uk-input" id="form-stacked-text" type="text" placeholder="display name" name="userName" value="<?php print $userName ?>">
               </div>
             </div>
 
@@ -41,8 +71,8 @@
                 <span class="sm-require-label">必須</span>
               </label>
               <div class="uk-form-controls">
-                <input class="uk-input user-id-box input-hint-user-id" id="form-stacked-text" type="text" placeholder="sign in id">
-                <div id="hint-user-id" class="uk-hidden input-hint">半角英数字の組み合わせ</div>
+                <input class="uk-input user-id-box input-hint-user-id" id="form-stacked-text" type="text" placeholder="sign in id" name="userId"  value="<?php print $id ?>">
+                <div id="hint-user-id" class="uk-hidden input-hint">半角文字で4文字以上</div>
               </div>
             </div>
 
@@ -51,8 +81,11 @@
                 <span class="sm-require-label">必須</span>
               </label>
               <div class="uk-form-controls">
-                <input class="uk-input password-box input-hint-password" placeholder="password..." type="password">
-                <div id="hint-password" class="uk-hidden input-hint">半角英数字記号の組み合わせで8文字以上16文字以内</div>
+                <input class="uk-input password-box input-hint-password" placeholder="password..." type="password" name="password">
+                <div id="hint-password" class="uk-hidden input-hint">
+                  半角英数字記号の組み合わせで8文字以上16文字以内<br>
+                  使用可能記号：!+*@`{},-:;
+                </div>
               </div>
             </div>
 
@@ -60,12 +93,11 @@
               <div class="uk-flex uk-flex-column">
                 <span><a href="#terms" uk-toggle>利用規約</a>に同意しますか？</span>
                 <label>
-                  <input class="uk-checkbox" id="terms-checkbox" disabled='disabled' type="checkbox"> 同意します
-                </label>
+                  <input class="uk-checkbox" id="terms-checkbox" disabled='disabled' type="checkbox" <?php if($terms == '1') print 'checked="checked"'; ?>>同意します</label>
               </div>
               <button class="uk-button uk-button-default">会員登録</button>
             </div>
-            <input type="hidden" id="terms-check" name="terms" value="0">
+            <input type="hidden" id="terms-check" name="terms" value="<?php print $terms?>">
           </form>
         </span>
       </h4>

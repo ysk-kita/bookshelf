@@ -1,6 +1,17 @@
 <?php
 session_start();
-$id = isset($_SESSION['inputId']) ? $_SESSION['inputId'] : '' ;
+$id = '';
+$errMsg = '';
+
+// ログイン失敗時に投げられる値のリセット
+if(isset($_SESSION['errorMsg'])) {
+  $errMsg = $_SESSION['errorMsg'];
+  unset($_SESSION['errorMsg']);
+}
+if(isset($_SESSION['inputId']) ){
+  $id = $_SESSION['inputId'];
+  unset($_SESSION['inputId']);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,14 +43,13 @@ $id = isset($_SESSION['inputId']) ? $_SESSION['inputId'] : '' ;
         <span class="sm-sign-menu-area uk-background-default">
           <form class="uk-form-horizontal" action="/signInProcess.php" method="POST">
             <h4 class="uk-margin-small-top uk-margin-remove-bottom uk-margin-small-left">ログイン</h4>
-            <?php
-            // エラーメッセージがある場合出力
-            if(isset($_SESSION['errorMsg'])) print $_SESSION['errorMsg'];
-            ?>
+            <div class="uk-margin-left uk-text-danger">
+              <?php print $errMsg ?>
+            </div>
             <div class="uk-margin-left uk-margin-small-top uk-margin-right uk-margin-small-bottom">
               <label class="uk-form-label user-id-label">ユーザーID</label>
               <div class="uk-form-controls">
-                <input class="uk-input user-id-box" id="form-stacked-text" type="text" placeholder="sign in id" name="signInId" value="<?php print $id ?>">
+                <input class="uk-input user-id-box" id="form-stacked-text" type="text" placeholder="sign in id" name="userId" value="<?php print $id ?>">
               </div>
             </div>
 

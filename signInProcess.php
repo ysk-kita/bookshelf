@@ -1,18 +1,22 @@
 <?php
 session_start();
-// podインポート
-include("components/accessor.php");
+// pdoインポート
+include("components/database_access/accessor.php");
+include("components/database_access/accounts.php");
 
-$id = $_POST['signInId'];
+$id = $_POST['userId'];
 $password = $_POST['password'];
 
+if(empty($id) || empty($password)){
+  // パラメータ未入力のため戻す
+  $_SESSION['inputId'] = $id;
+  $_SESSION['errorMsg'] = 'ユーザーIDかパスワードに謝りがあります。';
+  header('Location:/signIn.php');
+  exit();
+}
+
 try {
-  $sql = file_get_contents("sql/process/get_account.sql");
-  $prepare = $mysql->prepare($sql);
-  $prepare->bindValue(':account_id', $id, PDO::PARAM_STR);
-  $prepare->bindValue(':password', $password, PDO::PARAM_STR);
-  $prepare->execute();
-  $result = $prepare->fetch();
+  $result = get_account($mysql, $id, $password);
 } catch (PDOException $e) {
   $error = $e->getMessage();
 }
@@ -20,18 +24,13 @@ try {
 if(!$result){
   // ログイン処理失敗のためエラーメッセージを出してログインページに戻す
   $_SESSION['inputId'] = $id;
-  $_SESSION['errorMsg'] =
-  '<div class="uk-margin-left uk-text-danger">ユーザーIDかパスワードに謝りがあります。</div>';
+  $_SESSION['errorMsg'] = 'ユーザーIDかパスワードに謝りがあります。';
   header('Location:/signIn.php');
   exit();
 }
 
-if(isset($_SESSION['inputId'])){
-  unset($_SESSION['inputId']);
-  unset($_SESSION['errorMsg']);
-}
-
-$_SESSION['signInUser'] = $result;
+$_SESSION['userName'] = $result['user_name'];
+$_SESSION['userId']   = $result['account_id'];
 // ログイン処理に成功したのでtopに遷移させる
 header('Location:/index.php');
 exit();
