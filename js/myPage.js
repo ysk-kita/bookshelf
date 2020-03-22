@@ -1,5 +1,11 @@
 $(function(){
   $('.pagination-tab').on('click', function(){
+
+    // 現在開いているページと同じnavbarを選択したときは何もさせない
+    if($(this).hasClass('sm-active-nav')){
+      return false;
+    }
+
     // navbarのアクティブ切り替え(現在のページ)
     var deselect = $('.sm-active-nav');
     deselect.removeClass('sm-active-nav');

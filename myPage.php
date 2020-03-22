@@ -1,6 +1,10 @@
 <?php
 session_start();
 include("components/function.php");
+include("components/constants.php");
+include("components/database_access/accessor.php");
+include("components/database_access/books.php");
+
 $userName = $_SESSION['userName'];
 $userId = $_SESSION['userId'];
 
@@ -55,50 +59,10 @@ $userId = $_SESSION['userId'];
           <span id="bookshelf-1" class="">
             <div class="uk-flex uk-flex-center uk-flex-column sm-bookshelf-area">
               <!-- 書籍エリア -->
-              <div class="sm-bookshelf">
-                <div class="uk-flex uk-flex-center">
-                  <div class="uk-grid-small" uk-grid>
-                    <?php
-                      for($i=0;$i<5; $i++){
-                        // 書籍情報読込
-                        include("components/pickUp.php");
-                        // モーダル読込
-                        include("components/modalWindow.php");
-                      }
-                    ?>
-                  </div>
-                </div>
-              </div>
-              <!-- 書籍エリア -->
-              <div class="sm-bookshelf">
-                <div class="uk-flex uk-flex-center">
-                  <div class="uk-grid-small" uk-grid>
-                    <?php
-                      for($i=5;$i<10; $i++){
-                        // 書籍情報読込
-                        include("components/pickUp.php");
-                        // モーダル読込
-                        include("components/modalWindow.php");
-                      }
-                    ?>
-                  </div>
-                </div>
-              </div>
-              <!-- 書籍エリア -->
-              <div class="sm-bookshelf">
-                <div class="uk-flex uk-flex-center">
-                  <div class="uk-grid-small" uk-grid>
-                    <?php
-                      for($i=10;$i<15; $i++){
-                        // 書籍情報読込
-                        include("components/pickUp.php");
-                        // モーダル読込
-                        include("components/modalWindow.php");
-                      }
-                    ?>
-                  </div>
-                </div>
-              </div>
+              <?php
+              $books = get_bookmarks_list($mysql, $userId, $SHELF_FIRST);
+              include("components/bookshelfArea.php");
+              ?>
             </div>
             <!-- リンクでページ遷移 -->
             <div class="sm-bookshelf-pagination uk-flex uk-flex-between">
@@ -110,35 +74,10 @@ $userId = $_SESSION['userId'];
           <span id="bookshelf-2" class="uk-hidden">
             <div class="uk-flex uk-flex-center uk-flex-column sm-bookshelf-area">
               <!-- 書籍エリア -->
-              <div class="sm-bookshelf">
-                <div class="uk-flex uk-flex-center">
-                  <div class="uk-grid-small" uk-grid>
-                    <?php
-                      for($i=15;$i<20; $i++){
-                        // 書籍情報読込
-                        include("components/pickUp.php");
-                        // モーダル読込
-                        include("components/modalWindow.php");
-                      }
-                    ?>
-                  </div>
-                </div>
-              </div>
-              <!-- 書籍エリア -->
-              <div class="sm-bookshelf">
-                <div class="uk-flex uk-flex-center">
-                  <div class="uk-grid-small" uk-grid>
-                    <?php
-                      for($i=20;$i<25; $i++){
-                        // 書籍情報読込
-                        include("components/pickUp.php");
-                        // モーダル読込
-                        include("components/modalWindow.php");
-                      }
-                    ?>
-                  </div>
-                </div>
-              </div>
+              <?php
+              $books = get_bookmarks_list($mysql, $userId, $SHELF_SECOND);
+              include("components/bookshelfArea.php");
+              ?>
             </div>
             <!-- リンクでページ遷移 -->
             <div class="sm-bookshelf-pagination uk-flex uk-flex-between">
@@ -149,9 +88,10 @@ $userId = $_SESSION['userId'];
           <span id="bookshelf-3" class="uk-hidden">
             <div class="uk-flex uk-flex-center uk-flex-column sm-bookshelf-area">
               <!-- 書籍エリア -->
-              <div class="sm-bookshelf sm-bookshelf-empty">
-                  この本棚は空です
-              </div>
+              <?php
+              $books = get_bookmarks_list($mysql, $userId, $SHELF_THIRD);
+              include("components/bookshelfArea.php");
+              ?>
             </div>
             <!-- リンクでページ遷移 -->
             <div class="sm-bookshelf-pagination uk-flex uk-flex-between">

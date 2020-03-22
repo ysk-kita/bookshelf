@@ -159,7 +159,6 @@ html {
 }
 
 .sm-bookshelf {
-  max-height: 230px;
   min-height: 230px;
   width: 710px;
   min-width: 710px;
@@ -214,4 +213,9 @@ html {
 a.sm-link-invalid{
   pointer-events: none;
   color: gray;
+}
+
+.sm-book-title{
+  line-height: 120%;
+  word-break: break-all;
 }
