@@ -1,5 +1,4 @@
 <?php
-
 $shelfCount = intval(count($books)/5) + 1;
 if(count($books) < 1){
   print '<div class="sm-bookshelf sm-bookshelf-empty">この本棚は空です</div>';

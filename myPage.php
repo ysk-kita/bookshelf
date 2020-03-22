@@ -40,7 +40,7 @@ $userId = $_SESSION['userId'];
             <span class="">こんにちは <?php print $userName ?> さん</span>
           </h4>
         </div>
-        <div class="uk-flex uk-flex-column">
+        <div class="uk-flex uk-flex-column uk-margin-large-bottom@m">
           <nav class="" uk-navbar>
             <div class="uk-navbar-left sm-my-page-navbar">
               <ul class="uk-navbar-nav">
@@ -61,6 +61,7 @@ $userId = $_SESSION['userId'];
               <!-- 書籍エリア -->
               <?php
               $books = get_bookmarks_list($mysql, $userId, $SHELF_FIRST);
+              $shelfIndex = $SHELF_FIRST;
               include("components/bookshelfArea.php");
               ?>
             </div>
@@ -76,6 +77,7 @@ $userId = $_SESSION['userId'];
               <!-- 書籍エリア -->
               <?php
               $books = get_bookmarks_list($mysql, $userId, $SHELF_SECOND);
+              $shelfIndex = $SHELF_SECOND;
               include("components/bookshelfArea.php");
               ?>
             </div>
@@ -90,6 +92,7 @@ $userId = $_SESSION['userId'];
               <!-- 書籍エリア -->
               <?php
               $books = get_bookmarks_list($mysql, $userId, $SHELF_THIRD);
+              $shelfIndex = $SHELF_THIRD;
               include("components/bookshelfArea.php");
               ?>
             </div>
