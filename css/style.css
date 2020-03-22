@@ -128,7 +128,9 @@ html {
   border: 1px solid #000;
   margin-right: 20px;
   background-color: white;
-  min-height: 800px;
+  min-height: 770px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .sm-my-page-navbar{
@@ -143,7 +145,7 @@ html {
 }
 
 .sm-my-page-navbar > ul > li:last-child > a {
-  border-right: 1px solid;
+  border-right: 1px solid #000;;
 }
 
 .sm-active-nav {
@@ -179,20 +181,37 @@ html {
   margin-top: 10px;
 }
 
-.sm-bookshelf-pagination > span:first-child{
-  background-color: #fff;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 3px;
+.sm-bookshelf-pagination > span:first-child {
   margin-left: 40px;
+}
+
+.sm-bookshelf-pagination > span:first-child > a{
+  background-color: #fff;
+  padding-left: 25px;
+  padding-right: 30px;
+  padding-bottom: 4px;
   border: 1px solid #000;
 }
 
 .sm-bookshelf-pagination > span:last-child{
+  margin-right: 40px;
+}
+
+.sm-bookshelf-pagination > span:last-child > a{
   background-color: #fff;
   padding-left: 30px;
-  padding-right: 30px;
-  margin-right: 40px;
-  padding-bottom: 3px;
+  padding-right: 25px;
+  padding-bottom: 4px;
   border: 1px solid #000;
+}
+
+.sm-bookshelf-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a.sm-link-invalid{
+  pointer-events: none;
+  color: gray;
 }
