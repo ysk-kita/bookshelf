@@ -31,6 +31,7 @@ $userId = $_SESSION['userId'];
   <body class="uk-background-cover" data-src="images/background.jpg" uk-img>
     <!-- ナビゲーションバー -->
     <?php include("components/header.php"); ?>
+    <?php include("components/header_sidebar.php"); ?>
 
     <!-- 本体 -->
     <div class="uk-container uk-container-expand">

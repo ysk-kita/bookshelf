@@ -49,6 +49,7 @@ if(isset($_SESSION['terms'])){
     <?php include("components/function.php"); ?>
     <!-- ナビゲーションバー -->
     <?php include("components/header.php"); ?>
+    <?php include("components/header_sidebar.php"); ?>
 
     <!-- 本体 -->
     <div class="uk-container uk-container-expand">
