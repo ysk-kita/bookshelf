@@ -66,7 +66,7 @@ if(isset($_SESSION['inputId']) ){
 
           </form>
         </span>
-      </h4>
+      </div>
     </div>
   </body>
 </html>

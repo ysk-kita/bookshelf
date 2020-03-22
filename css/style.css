@@ -123,3 +123,76 @@ html {
 .sm-invalid-box{
   border-color: red;
 }
+
+.sm-my-page-user-area{
+  border: 1px solid #000;
+  margin-right: 20px;
+  background-color: white;
+  min-height: 800px;
+}
+
+.sm-my-page-navbar{
+  height: 40px;
+}
+
+.sm-my-page-navbar > ul > li > a {
+  min-height: 40px;
+  border: 1px solid #000;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.sm-my-page-navbar > ul > li:last-child > a {
+  border-right: 1px solid;
+}
+
+.sm-active-nav {
+  color: #fff !important;
+  background-color: darkgray;
+}
+
+.sm-inactive-nav {
+  color: #000 !important;
+  background-color: white;
+}
+
+.sm-bookshelf {
+  max-height: 230px;
+  min-height: 230px;
+  width: 710px;
+  min-width: 710px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-bottom: 0;
+}
+
+.sm-bookshelf > div {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.sm-bookshelf-area > div:last-child {
+  border-bottom: 1px solid #000;
+}
+
+.sm-bookshelf-pagination{
+  margin-top: 10px;
+}
+
+.sm-bookshelf-pagination > span:first-child{
+  background-color: #fff;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 3px;
+  margin-left: 40px;
+  border: 1px solid #000;
+}
+
+.sm-bookshelf-pagination > span:last-child{
+  background-color: #fff;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-right: 40px;
+  padding-bottom: 3px;
+  border: 1px solid #000;
+}

@@ -100,7 +100,7 @@ if(isset($_SESSION['terms'])){
             <input type="hidden" id="terms-check" name="terms" value="<?php print $terms?>">
           </form>
         </span>
-      </h4>
+      </div>
     </div>
 
     <div id="terms" class="uk-flex-top" uk-modal>
