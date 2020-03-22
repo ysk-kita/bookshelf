@@ -7,12 +7,10 @@
     <div class="uk-flex uk-flex-column book-genre-select" id="genre-all">
       <?php
       $books = get_all_genre_books($mysql);
-      // 各ジャンルからランダムに3件表示
-      if(count($books) > 3){
-        $noList = getNotDupRands(0 , count($books), 3);
-        foreach ($noList as $bookIndex){
-          include("components/genreShelf.php");
-        }
+      // 各ジャンルからランダムに3件表示 (総合は3件を下回らないので制御を入れない)
+      $noList = getNotDupRands(0 , count($books), 3);
+      foreach ($noList as $bookIndex){
+        include("components/genreShelf.php");
       }
       ?>
     </div>
