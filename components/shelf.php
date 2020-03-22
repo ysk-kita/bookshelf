@@ -1,7 +1,7 @@
 <div>
   <div class="uk-card uk-card-default uk-card-body uk-padding-remove sm-book">
-    <a class="uk-button uk-button-default uk-height-small sm-book " href=<?php getHref($shelfIndex . '-' . $bookIndex); ?> uk-toggle>
-      本<?php print $bookIndex; ?>
+    <a class="uk-height-small sm-book" href=<?php getHref($shelfIndex . '-' . $bookIndex); ?> uk-toggle>
+      <img class="sm-book-img" src=<?php print $books[$bookIndex]['cover_img']; ?> />
     </a>
   </div>
   <div class="uk-card-footer uk-padding-remove sm-book">

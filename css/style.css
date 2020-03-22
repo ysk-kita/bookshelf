@@ -223,3 +223,9 @@ a.sm-link-invalid{
   line-height: 120%;
   word-break: break-all;
 }
+
+.sm-book-img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
