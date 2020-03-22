@@ -11,4 +11,13 @@ $SHELF_FIRST = 1;
 $SHELF_SECOND = 2;
 $SHELF_THIRD = 3;
 $SHELF_BOOKS_MAX = 5;
+
+/**
+ * ジャンル関連
+ */
+$GENRE_ROMANCE = 1;
+$GENRE_LITERATURE = 2;
+$GENRE_SF = 3;
+$GENRE_OTHER = 4;
+
 ?>

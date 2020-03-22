@@ -36,8 +36,10 @@ html {
 }
 
 .sm-book-area{
+  padding-top: 30px;
   width: 710px;
   min-width: 710px;
+  background-color: #fff;
 }
 
 .sm-book {
@@ -226,6 +228,7 @@ a.sm-link-invalid{
 
 .sm-book-img {
   max-width: 100%;
-  height: auto;
+  height: 150px;
   width: auto;
+  border: 1px solid gray;
 }

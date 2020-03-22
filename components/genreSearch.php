@@ -2,47 +2,19 @@
   <h4 class="uk-margin-remove">
     <span class="sm-area-label uk-background-default" id="genre-label">ジャンル：総合　</span>
   </h4>
-  <div class="uk-card uk-card-default uk-card-body uk-margin-bottom uk-padding-remove-horizontal uk-padding-remove-bottom sm-book-area uk-flex uk-flex-column">
+  <div class="uk-margin-bottom uk-padding-remove-horizontal uk-padding-remove-bottom sm-book-area uk-flex uk-flex-column">
 
     <div class="uk-flex uk-flex-column book-genre-select" id="genre-all">
-      <!-- ジャンル詳細 -->
-      <div class="uk-flex uk-flex-left uk-margin-large-left sm-genre-search-books">
-        <div class="uk-flex">
-          <div class="uk-card uk-card-default uk-card-body uk-padding-remove sm-book uk-height-small uk-margin-right">
-            本表紙
-          </div>
-          <div class="uk-flex uk-flex-column uk-flex-between">
-            <div class="uk-margin-bottom">タイトル</div>
-            <div class="uk-margin-bottom">
-              <p class="sm-synopsis">いいえ彼はトムです。</p>
-            </div>
-            <div class="uk-margin-auto-left">
-              <button class="uk-button uk-button-default">作品ページへ</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="sm-divider"></div>
-      <!-- ループにする-->
-      <div class="uk-flex uk-flex-left uk-margin-large-left sm-genre-search-books">
-        <div class="uk-flex">
-          <div class="uk-card uk-card-default uk-card-body uk-padding-remove sm-book uk-height-small uk-margin-right">
-            本表紙
-          </div>
-          <div class="uk-flex uk-flex-column uk-flex-between">
-            <div class="uk-margin-bottom">タイトル2</div>
-            <div class="uk-margin-bottom">
-              <p class="sm-synopsis">
-                彼がトムなわけがないだろう。何故なら彼は10年前にペンと間違えられたショックで死んでしまっているんだ。
-              </p>
-            </div>
-            <div class="uk-margin-auto-left">
-              <button class="uk-button uk-button-default">作品ページへ</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="sm-divider"></div>
+      <?php
+      $books = get_all_genre_books($mysql);
+      // 各ジャンルからランダムに3件表示
+      if(count($books) > 3){
+        $noList = getNotDupRands(0 , count($books), 3);
+        foreach ($noList as $bookIndex){
+          include("components/genreShelf.php");
+        }
+      }
+      ?>
     </div>
 
     <div class="uk-flex uk-flex-column book-genre uk-hidden" id="genre-capture">
@@ -87,7 +59,7 @@
       <div class="sm-divider"></div>
     </div>
 
-    <div class="uk-flex uk-flex-column book-genre uk-hidden" id="genre-another">
+    <div class="uk-flex uk-flex-column book-genre uk-hidden" id="genre-other">
       <!-- ジャンル詳細 -->
       <div class="uk-flex uk-flex-left uk-margin-large-left sm-genre-search-books">
         <div class="uk-flex">

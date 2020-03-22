@@ -3,6 +3,11 @@ session_start();
 
 // php関数定義ファイル読み込み
 require("components/function.php");
+include("components/constants.php");
+include("components/database_access/accessor.php");
+include("components/database_access/books.php");
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,7 +42,6 @@ require("components/function.php");
         </p>
         <div class="uk-flex uk-flex-center">
           <!-- ジャンル一覧エリア -->
-
           <?php include("components/genre.php"); ?>
           <!-- 検索結果エリア -->
           <?php include("components/genreSearch.php"); ?>
