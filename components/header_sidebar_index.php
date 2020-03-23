@@ -23,9 +23,12 @@ $isSignIn = isset($_SESSION['userName']);
     <div class="sm-sidebar-menu">
       <p class="uk-margin-remove">書籍分類</p>
       <ul class="uk-nav uk-nav-default sm-menu-list">
-        <li class="uk-active genre-selector" genre-id="genre-capture"><a>攻略本</a></li>
-        <li class="uk-active genre-selector" genre-id="genre-reference"><a>参考書</a></li>
-        <li class="uk-active genre-selector" genre-id="genre-other"><a>その他</a></li>
+        <li class="uk-active genre-selector" genre-id="genre-all"><a>総合</a></li>
+        <?php
+        foreach($genreList as $genre){
+          print "<li class='uk-active genre-selector' genre-text='${genre['genre_name']}' genre-id='genre-${genre['genre_path']}'><a>${genre['genre_name']}</a></li>";
+        }
+        ?>
       </ul>
     </div>
   </div>

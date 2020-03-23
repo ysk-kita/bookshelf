@@ -6,7 +6,10 @@ require("components/function.php");
 include("components/constants.php");
 include("components/database_access/accessor.php");
 include("components/database_access/books.php");
+include("components/database_access/genre.php");
 
+// ジャンルエリアの動的生成に使うため、先にジャンル一覧のみ取得しておく
+$genreList = get_genre_list($mysql);
 
 ?>
 <!DOCTYPE html>
