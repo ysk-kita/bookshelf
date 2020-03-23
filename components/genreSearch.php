@@ -1,7 +1,7 @@
 <div>
   <!-- 選択中のジャンル出力エリア(jsで変更) -->
   <h4 class="uk-margin-remove">
-    <span class="sm-area-label uk-background-default" id="genre-label">ジャンル：総合　</span>
+    <span class="sm-area-label uk-background-default" id="genre-label">ジャンル：総合</span>
   </h4>
 
   <!-- 指定したジャンルを出力 -->
