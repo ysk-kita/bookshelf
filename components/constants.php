@@ -15,9 +15,12 @@ $SHELF_BOOKS_MAX = 5;
 /**
  * ジャンル関連
  */
-$GENRE_ROMANCE = 1;
-$GENRE_LITERATURE = 2;
-$GENRE_SF = 3;
-$GENRE_OTHER = 4;
+$GENRE_DICT = array(
+  'romance' => '1',
+  'literature' => '2',
+  'sf' => '3',
+  'others' => '4'
+);
+$GENRE_BOOKS_MAX = 5;
 
 ?>

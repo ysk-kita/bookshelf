@@ -22,8 +22,10 @@
     foreach($genreList as $genre){
       print "<div class='uk-flex uk-flex-column book-genre uk-hidden' id='genre-${genre['genre_path']}'>";
       $books = get_genre_books($mysql, $genre['genre_id']);
-      // 各ジャンルからランダムに3件表示 (総合は3件を下回らないので制御を入れない)
-      for($bookIndex = 0; $bookIndex < count($books); $bookIndex++){
+
+      $displayCount = (count($books) > 3) ? 3 : count($books);
+
+      for($bookIndex = 0; $bookIndex < $displayCount; $bookIndex++){
         include("components/genreShelf.php");
       }
       print "</div>";
