@@ -280,3 +280,39 @@ a.sm-link-invalid{
   color: dimgray;
   text-decoration: none;
 }
+
+.sm-book-detail{
+  border: 1px solid gray;
+  background-color: #fff;
+  width: 550px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.sm-book-detail > h3 {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 6px;
+  border-bottom: 1px dashed gray;
+}
+
+.sm-book-detail-img {
+  max-width: 100%;
+  height: 200px;
+  width: auto;
+  border: 1px solid gray;
+  margin-left: 30px;
+}
+
+.sm-book-detail-title{
+  font-weight: bold;
+}
+
+.sm-book-detail-title > span{
+  font-weight: normal;
+}
+
+.sm-book-detail-episode-one{
+  margin-left: 30px;
+  width: 250px;
+}
