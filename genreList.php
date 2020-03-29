@@ -100,5 +100,4 @@ $genreList = get_genre_list($mysql);
       </div>
     </div>
   </body>
-
 </html>

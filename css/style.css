@@ -275,3 +275,8 @@ a.sm-link-invalid{
 .sm-now-page {
   border: 1px solid gray;
 }
+
+.sm-button-link {
+  color: dimgray;
+  text-decoration: none;
+}
