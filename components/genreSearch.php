@@ -34,7 +34,7 @@
 
     <!-- ループの最後を出力した後に詳細リンクを作る(ここもJSで改変) -->
     <div class="uk-margin-right uk-margin-auto-left">
-      <a id="genre-link" class="uk-button uk-padding-remove uk-width-1-1" href="/genreList.php?genre=all">ジャンル詳細へ</a>
+      <a id="genre-link" class="uk-button uk-padding-remove uk-width-1-1" href="/genreList.php?genre=all&pages=1">ジャンル詳細へ</a>
     </div>
   </div>
 </div>

@@ -73,7 +73,7 @@ $(function(){
     // リンク先
     var genreLink = $('#genre-link');
     var genreId = afterGenreId.split('-')[1];
-    var genreHref = '/genreList.php?genre=' + genreId;
+    var genreHref = '/genreList.php?genre=' + genreId + '&pages=1';
     genreLink.attr('href', genreHref);
 
   });

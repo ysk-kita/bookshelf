@@ -53,7 +53,7 @@ $genreList = get_genre_list($mysql);
               $books = get_genre_books($mysql, $GENRE_DICT[$genre]);
             }
 
-            $pages = 4; // getで調整
+            $pages = $_GET['pages']; // getで調整
 
             $pageCount = (int)(count($books) / 5) + 1;
             $bookStart = $GENRE_BOOKS_MAX * ($pages-1);
@@ -68,19 +68,33 @@ $genreList = get_genre_list($mysql);
           </div>
           <div class="sm-genre-pagination uk-flex uk-margin-remove uk-flex-between">
             <!-- 1ページ目のprevリンクは無効リンクにする -->
-            <span><a class="pagination-link-prev" href="#">&lt;&lt;prev</a></span>
+            <?php
+            if ($pages == 1){
+              print "<span><a class='sm-link-invalid' href='#'>&lt;&lt;prev</a></span>";
+            } else {
+              $prev = $pages - 1;
+              print "<span><a href='/genreList.php?genre=${genre}&pages=${prev}'>&lt;&lt;prev</a></span>";
+            }
+            ?>
             <span class="sm-pages">
               <?php
-              for($i = 1; $i< $pageCount + 1; $i++){
+              for($i = 1; $i< ($pageCount + 1); $i++){
                 if ($i==$pages){
-                  print "<span class='sm-now-page'><a class='sm-link-invalid pagination-link-next' href='#'>${i}</a></span>";
+                  print "<span class='sm-now-page'><a class='sm-link-invalid' href='#'>${i}</a></span>";
                 } else {
-                  print "<span><a class='pagination-link-next' href='#'>${i}</a></span>";
+                  print "<span><a href='/genreList.php?genre=${genre}&pages=${i}'>${i}</a></span>";
                 }
               };
               ?>
             </span>
-            <span><a class="pagination-link-next" href="#">next&gt;&gt;</a></span>
+            <?php
+            if ($pages == $pageCount){
+              print "<span><a class='sm-link-invalid' href='#'>&gt;&gt;next</a></span>";
+            } else {
+              $next = $pages + 1;
+              print "<span><a href='/genreList.php?genre=${genre}&pages=${next}'>&gt;&gt;next</a></span>";
+            }
+            ?>
           </div>
         </div>
       </div>
