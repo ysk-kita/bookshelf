@@ -43,16 +43,20 @@ $bookDetail = get_book_detail_list($mysql, $_GET['bookId']);
       <div class="uk-flex uk-flex-center">
         <div class="sm-book-detail">
           <h3><?php print $book[0]['book_title'] ?></h3>
-          <div class="uk-flex uk-flex-inline uk-margin-bottom">
-            <img class="sm-book-detail-img" src=<?php print $book[0]['cover_img']; ?> />
-            <div class="uk-flex uk-flex-column sm-book-detail-episode-one uk-flex-between">
-              <div class="sm-book-detail-title">第1話 <span>(全<?php print $book[0]['total_episodes'] ?>話)</span></div>
-              <button class="uk-button uk-button-default">第1話を読む</button>
-              <div class="uk-flex uk-flex-inline">
-                <button class="uk-button uk-button-default">お気に入り</button>
-                <button class="uk-button uk-button-default">OFF</button>
+          <div class="uk-flex uk-flex-column uk-margin-bottom sm-book-detail-area">
+            <div class="uk-flex uk-flex-inline">
+              <img class="sm-book-detail-img" src=<?php print $book[0]['cover_img']; ?> />
+              <div class="uk-flex uk-flex-column sm-book-detail-episode-one uk-flex-between">
+                <div class="sm-book-detail-title">第1話 <span>(全<?php print $book[0]['total_episodes'] ?>話)</span></div>
+                <button class="uk-button uk-button-default">第1話を読む</button>
+                <div class="uk-flex uk-flex-inline">
+                  <button class="uk-button uk-button-default">お気に入り</button>
+                  <button class="uk-button uk-button-default">OFF</button>
+                </div>
               </div>
-
+            </div>
+            <div class="sm-book-detail-synopsis">
+            <?php print $book[0]['synopsis'] ?>
             </div>
           </div>
         </div>

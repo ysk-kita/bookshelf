@@ -301,7 +301,6 @@ a.sm-link-invalid{
   height: 200px;
   width: auto;
   border: 1px solid gray;
-  margin-left: 30px;
 }
 
 .sm-book-detail-title{
@@ -315,4 +314,14 @@ a.sm-link-invalid{
 .sm-book-detail-episode-one{
   margin-left: 30px;
   width: 250px;
+}
+
+.sm-book-detail-area{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.sm-book-detail-synopsis{
+  margin-top: 20px;
+  border: 1px solid gray;
 }
