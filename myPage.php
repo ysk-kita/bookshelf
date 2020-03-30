@@ -30,15 +30,21 @@ $userId = $_SESSION['userId'];
   <body class="uk-background-cover" data-src="images/background.jpg" uk-img>
     <!-- ナビゲーションバー -->
     <?php include("components/header.php"); ?>
-    <?php include("components/header_sidebar.php"); ?>
+    <?php include("components/header_sidebar_myPage.php"); ?>
 
     <!-- 本体 -->
     <div class="uk-container uk-container-expand">
       <div class="uk-flex uk-flex-center uk-margin-top uk-margin-large-bottom">
         <div class="sm-my-page-user-area uk-visible@m">
-          <h4 class="uk-margin-remove-bottom">
-            <span class="">こんにちは <?php print $userName ?> さん</span>
-          </h4>
+          <div class="uk-flex uk-flex-column uk-flex-around">
+            <h4 class="uk-margin-remove-bottom uk-margin-small-top">こんにちは <?php print $userName ?> さん</h4>
+            <div class="uk-flex uk-flex-center uk-margin-top">
+              <a class="sm-button-link uk-button uk-button-secondary sm-link-invalid" href="">作品を投稿する</a>
+            </div>
+            <div class="uk-flex uk-flex-center uk-margin-top uk-margin-bottom">
+              <a class="sm-button-link uk-button uk-button-secondary sm-link-invalid" href="">本棚を整理する</a>
+            </div>
+          </div>
         </div>
         <div class="uk-flex uk-flex-column uk-margin-large-bottom@m">
           <nav class="" uk-navbar>

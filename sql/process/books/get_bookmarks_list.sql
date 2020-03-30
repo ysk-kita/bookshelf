@@ -1,4 +1,5 @@
 SELECT
+  b.book_id,
   b.book_title,
   b.cover_img,
   b.synopsis

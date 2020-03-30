@@ -10,7 +10,7 @@
         <p class="sm-synopsis"><?php print $books[$bookIndex]['synopsis']; ?></p>
       </div>
       <div class="uk-margin-auto-left">
-        <a class="sm-button-link uk-button uk-button-default" href="/bookDetail.php?bookId=<?php print $books[$bookIndex]['book_id']; ?>">作品ページへ</a>
+        <a class="sm-button-link uk-button uk-button-default" href=<?php print '/bookDetail.php?bookId=' . $books[$bookIndex]['book_id']; ?>>作品ページへ</a>
       </div>
     </div>
   </div>

@@ -50,13 +50,13 @@ $bookDetail = get_book_detail_list($mysql, $_GET['bookId']);
                 <div class="sm-book-detail-title">第1話 <span>(全<?php print $book[0]['total_episodes'] ?>話)</span></div>
                 <button class="uk-button uk-button-default">第1話を読む</button>
                 <div class="uk-flex uk-flex-inline">
-                  <button class="uk-button uk-button-default">お気に入り</button>
-                  <button class="uk-button uk-button-default">OFF</button>
+                  <button class="uk-button uk-button-default">本棚に追加する</button>
+                  <button class="uk-button uk-button-default">☆未</button>
                 </div>
               </div>
             </div>
             <div class="sm-book-detail-synopsis">
-            <?php print $book[0]['synopsis'] ?>
+              <?php print $book[0]['synopsis'] ?>
             </div>
           </div>
         </div>
