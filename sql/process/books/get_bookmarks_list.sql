@@ -10,7 +10,7 @@ INNER JOIN
 ON
   bm.book_id = b.book_id
 WHERE
-  bm.account_id = :account_id
+  bm.user_id = :user_id
 AND
   bm.shelf_id = :shelf_id
 ;

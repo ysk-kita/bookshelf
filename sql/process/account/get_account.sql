@@ -3,6 +3,6 @@ SELECT
 FROM
   accounts
 WHERE
-  account_id = :account_id
+  user_id = :user_id
   AND password = :password
 ;

@@ -1,4 +1,5 @@
 SELECT
+  book_id,
   book_title,
   synopsis,
   total_episodes,

@@ -315,14 +315,6 @@ a.sm-link-invalid{
   border: 1px solid gray;
 }
 
-.sm-book-detail-title{
-  font-weight: bold;
-}
-
-.sm-book-detail-title > span{
-  font-weight: normal;
-}
-
 .sm-book-detail-episode-one{
   margin-left: 30px;
   width: 250px;
@@ -331,6 +323,10 @@ a.sm-link-invalid{
 .sm-book-detail-area{
   margin-left: 30px;
   margin-right: 30px;
+}
+
+.sm-book-detail-area > div:first-child {
+  margin-top: 0px;
 }
 
 .sm-book-detail-area > div {
@@ -356,6 +352,7 @@ a.sm-link-invalid{
 
 .sm-advertising {
   margin: 25px 20px 20px 0px;
+  height: 496px;
   border: 1px solid gray;
   background-color: white;
   display: flex;
@@ -374,4 +371,8 @@ a.sm-link-invalid{
   height: 150px;
   border: 1px gray dashed;
   margin: 0px 10px 10px 10px;
+}
+
+.sm-bookmarks-state{
+  margin-left: 5px
 }

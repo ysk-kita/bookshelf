@@ -30,7 +30,7 @@ if(!$result){
 }
 
 $_SESSION['userName'] = $result['user_name'];
-$_SESSION['userId']   = $result['account_id'];
+$_SESSION['userId']   = $result['user_id'];
 // ログイン処理に成功したのでtopに遷移させる
 header('Location:/index.php');
 exit();

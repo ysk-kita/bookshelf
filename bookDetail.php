@@ -28,8 +28,7 @@ $bookDetail = get_book_detail_list($mysql, $_GET['bookId']);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.js"></script>
 
-    <link rel="stylesheet" href="css/pulldown.css"/>
-    <script type="text/javascript" src="js/pulldown.js"></script>
+    <script type="text/javascript" src="js/bookDetail.js"></script>
 
     <link rel="stylesheet" href="css/style.css"/>
   </head>
@@ -53,22 +52,25 @@ $bookDetail = get_book_detail_list($mysql, $_GET['bookId']);
             <div class="uk-flex uk-flex-inline">
               <img class="sm-book-detail-img" src=<?php print $book[0]['cover_img']; ?> />
               <div class="uk-flex uk-flex-column sm-book-detail-episode-one uk-flex-between">
-                <div class="sm-book-detail-title">第1話 <span>(全<?php print $book[0]['total_episodes'] ?>話)</span></div>
-                <button class="uk-button uk-button-default">第1話を読む</button>
                 <div class="uk-flex uk-flex-inline">
-                  <button class="uk-button uk-button-default">本棚に追加する</button>
-                  <button class="uk-button uk-button-default">☆未</button>
+                  <div>全<?php print $book[0]['total_episodes']; ?>話</span></div>
+                  <!-- todo bookmark済みなら★に変更 -->
+                  <span class="sm-bookmarks-state">☆</span>
                 </div>
+                <a class="sm-button-link uk-button uk-button-default" href="/bookEpisode.php?episodeNo=1">第1話を読む</a>
+                <!-- todo bookmark済みなら削除するボタンに変更 -->
+                <button class="uk-button uk-button-default" id="add-bookmarks" bookId=<?php print $book[0]['book_id']; ?>>本棚に追加する</button>
               </div>
             </div>
             <div class="sm-book-detail-synopsis">
               <?php print $book[0]['synopsis'] ?>
             </div>
             <div class="sm-book-detail-episodes">
-              <div>第1話</div>
-              <div>第2話</div>
-              <div>･･･</div>
-              <div>最終話</div>
+              <?php
+              foreach($bookDetail as $detail){
+                print "<div><a href='/bookEpisode.php?episodeNo=${detail['episode_no']}'>${detail['episode_title']}</a></div>";
+              };
+              ?>
             </div>
           </div>
         </div>

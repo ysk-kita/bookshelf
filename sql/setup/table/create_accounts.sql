@@ -1,6 +1,6 @@
 create table kitabooks.accounts (
-  account_id VARCHAR(16),
+  user_id VARCHAR(16),
   user_name TEXT,
   password VARCHAR(20),
-  PRIMARY KEY (account_id)
+  PRIMARY KEY (user_id)
 ) CHARSET=utf8;
