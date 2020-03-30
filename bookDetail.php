@@ -37,10 +37,16 @@ $bookDetail = get_book_detail_list($mysql, $_GET['bookId']);
   <body class="uk-background-cover" data-src="images/background.jpg" uk-img>
     <!-- ナビゲーションバー -->
     <?php include("components/header.php"); ?>
+    <?php include("components/header_sidebar.php"); ?>
 
     <!-- 本体 -->
     <div class="uk-container uk-container-expand">
       <div class="uk-flex uk-flex-center">
+        <div class="sm-advertising uk-visible@m">
+          <div>広告1</div>
+          <div>広告2</div>
+          <div>広告3</div>
+        </div>
         <div class="sm-book-detail">
           <h3><?php print $book[0]['book_title'] ?></h3>
           <div class="uk-flex uk-flex-column uk-margin-bottom sm-book-detail-area">
@@ -58,11 +64,13 @@ $bookDetail = get_book_detail_list($mysql, $_GET['bookId']);
             <div class="sm-book-detail-synopsis">
               <?php print $book[0]['synopsis'] ?>
             </div>
+            <div class="sm-book-detail-episodes">
+              <div>第1話</div>
+              <div>第2話</div>
+              <div>･･･</div>
+              <div>最終話</div>
+            </div>
           </div>
-        </div>
-
-        <div>
-
         </div>
 
       </div>

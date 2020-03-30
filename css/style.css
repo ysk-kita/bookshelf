@@ -28,7 +28,7 @@ html {
   padding-left: 10px;
 }
 .sm-sidebar-menu > ul {
-  margin-top: 5px;
+  margin-top: 3px;
   padding-left: 10px;
 }
 
@@ -333,7 +333,45 @@ a.sm-link-invalid{
   margin-right: 30px;
 }
 
-.sm-book-detail-synopsis{
+.sm-book-detail-area > div {
   margin-top: 20px;
+}
+
+.sm-book-detail-synopsis{
   border: 1px solid gray;
+}
+
+.sm-book-detail-episodes{
+  border: 1px solid gray;
+}
+
+.sm-book-detail-episodes > div{
+  padding: 2px 0px 2px 5px;
+  border-bottom: 1px dashed gray;
+}
+
+.sm-book-detail-episodes > div:last-child{
+  border-bottom: none
+}
+
+.sm-advertising {
+  margin: 25px 20px 20px 0px;
+  border: 1px solid gray;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sm-advertising > div:first-child {
+  width: 120px;
+  height: 150px;
+  border: 1px gray dashed;
+  margin: 10px 10px 10px 10px;
+}
+
+.sm-advertising > div {
+  width: 120px;
+  height: 150px;
+  border: 1px gray dashed;
+  margin: 0px 10px 10px 10px;
 }
