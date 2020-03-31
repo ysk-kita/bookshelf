@@ -11,5 +11,14 @@ function insert_bookmarks($pdo, $user_id, $book_id, $shelf_id){
   return $prepare->fetchAll();
 }
 
+/** 指定ユーザが指定した本をブックマークしているかを1/0で返却する */
+function get_bookmarks_count($pdo, $user_id, $book_id){
+  $sql = file_get_contents("sql/process/bookmarks/get_bookmarks_count.sql");
+  $prepare = $pdo->prepare($sql);
+  $prepare->bindValue(':user_id', $user_id, PDO::PARAM_STR);
+  $prepare->bindValue(':book_id', $book_id, PDO::PARAM_STR);
+  $prepare->execute();
+  return $prepare->fetchColumn();
+}
 
 ?>

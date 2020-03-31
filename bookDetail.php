@@ -6,9 +6,26 @@ require("components/function.php");
 include("components/constants.php");
 include("components/database_access/accessor.php");
 include("components/database_access/books.php");
+include("components/database_access/bookmarks.php");
 
 $book = get_book_info($mysql, $_GET['bookId']);
 $bookDetail = get_book_detail_list($mysql, $_GET['bookId']);
+
+$isBookmarks = false;
+// ブックマーク追加済み確認
+if(isset($_SESSION['userId'])){
+  try {
+    $checkResult = get_bookmarks_count($mysql, $_SESSION['userId'],  $_GET['bookId']);
+  } catch (PDOException $e) {
+    $error = $e->getMessage();
+  }
+  $isBookmarks = ($checkResult=='1') ? true : false;
+}
+
+
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -41,11 +58,9 @@ $bookDetail = get_book_detail_list($mysql, $_GET['bookId']);
     <!-- 本体 -->
     <div class="uk-container uk-container-expand">
       <div class="uk-flex uk-flex-center">
-        <div class="sm-advertising uk-visible@m">
-          <div>広告1</div>
-          <div>広告2</div>
-          <div>広告3</div>
-        </div>
+
+        <?php include("components/advertising.php"); ?>
+
         <div class="sm-book-detail">
           <h3><?php print $book[0]['book_title'] ?></h3>
           <div class="uk-flex uk-flex-column uk-margin-bottom sm-book-detail-area">
@@ -54,12 +69,24 @@ $bookDetail = get_book_detail_list($mysql, $_GET['bookId']);
               <div class="uk-flex uk-flex-column sm-book-detail-episode-one uk-flex-between">
                 <div class="uk-flex uk-flex-inline">
                   <div>全<?php print $book[0]['total_episodes']; ?>話</span></div>
-                  <!-- todo bookmark済みなら★に変更 -->
-                  <span class="sm-bookmarks-state">☆</span>
+                  <?php
+                  if($isBookmarks){
+                    print '<span class="sm-bookmarks-state">★</span>';
+                  } else {
+                    print '<span class="sm-bookmarks-state">☆</span>';
+                  }
+                  ?>
                 </div>
                 <a class="sm-button-link uk-button uk-button-default" href="/bookEpisode.php?episodeNo=1">第1話を読む</a>
-                <!-- todo bookmark済みなら削除するボタンに変更 -->
-                <button class="uk-button uk-button-default" id="add-bookmarks" bookId=<?php print $book[0]['book_id']; ?>>本棚に追加する</button>
+                <?php
+                  if($isBookmarks){
+                    print '<button class="uk-button uk-button-default" id="delete-bookmarks" bookId=' . $book[0]['book_id'] . '>本棚から削除</button>';
+                    print '<button class="uk-button uk-button-default uk-hidden" id="add-bookmarks" bookId=' . $book[0]['book_id'] . '>本棚に追加</button>';
+                  } else {
+                    print '<button class="uk-button uk-button-default uk-hidden" id="delete-bookmarks" bookId=' . $book[0]['book_id'] . '>本棚から削除</button>';
+                    print '<button class="uk-button uk-button-default" id="add-bookmarks" bookId=' . $book[0]['book_id'] . '>本棚に追加</button>';
+                  }
+                ?>
               </div>
             </div>
             <div class="sm-book-detail-synopsis">
