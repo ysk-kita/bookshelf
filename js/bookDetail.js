@@ -42,7 +42,7 @@ $(function(){
       alert('書籍を本棚から削除しました。');
 
       // ★マークの更新
-      $('.sm-bookmarks-state').html('★');
+      $('.sm-bookmarks-state').html('☆');
 
       // ボタンの切り替え
       $('#add-bookmarks').removeClass('uk-hidden');

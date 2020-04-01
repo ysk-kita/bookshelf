@@ -21,4 +21,16 @@ function get_bookmarks_count($pdo, $user_id, $book_id){
   return $prepare->fetchColumn();
 }
 
+/** ブックマークから削除する */
+function delete_bookmarks($pdo, $user_id, $book_id, $shelf_id){
+  $sql = file_get_contents("sql/process/bookmarks/delete_bookmarks.sql");
+  $prepare = $pdo->prepare($sql);
+  $prepare->bindValue(':user_id', $user_id, PDO::PARAM_STR);
+  $prepare->bindValue(':book_id', $book_id, PDO::PARAM_STR);
+  $prepare->bindValue(':shelf_id', $shelf_id, PDO::PARAM_STR);
+  $prepare->execute();
+  return $prepare->fetchAll();
+}
+
+
 ?>
