@@ -9,4 +9,7 @@
       <?php print $books[$bookIndex]['book_title']; ?>
     </a>
   </div>
+  <div class="uk-flex uk-flex-center">
+    <input type="checkbox" name="modify-book" value=<?php print $books[$bookIndex]['book_id']; ?>>
+  </div>
 </div>

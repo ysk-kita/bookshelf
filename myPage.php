@@ -42,7 +42,17 @@ $userId = $_SESSION['userId'];
               <a class="sm-button-link uk-button uk-button-secondary sm-link-invalid" href="">作品を投稿する</a>
             </div>
             <div class="uk-flex uk-flex-center uk-margin-top uk-margin-bottom">
-              <a class="sm-button-link uk-button uk-button-secondary sm-link-invalid" href="">本棚を整理する</a>
+              <div class="uk-flex uk-flex-column">
+                <button class="sm-button-link uk-button uk-button-default" id="modify-button">本棚を操作する</button>
+                <div class="uk-flex uk-flex-inline uk-flex-around uk-margin-small-top">
+                  <span class="sm-radio">
+                  <input type="radio" name="modify-mode" value="delete" checked="checked">削除
+                  </span>
+                  <span class="sm-radio ">
+                    <input type="radio" name="modify-mode" class="uk-margin-right-auto"     value="move">移動
+                  </span>
+                  </div>
+              </div>
             </div>
           </div>
         </div>

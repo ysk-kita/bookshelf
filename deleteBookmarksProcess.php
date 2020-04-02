@@ -13,21 +13,34 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUE
     exit();
   }
 
-  $bookId = $_POST['bookId'];
   $userId = $_SESSION['userId'];
   $shelf_id = '1'; // 暫定機能のため、一旦は本棚1にのみ追加できるようにする
-  try {
-    $result = delete_bookmarks($mysql, $userId, $bookId, $shelf_id);
-  } catch (PDOException $e) {
-    header("HTTP/1.1 500 Internal Server Error");
-    exit();
+
+  if(isset($_POST['bookId'])){
+    $bookId = $_POST['bookId'];
+    deleteFunc($mysql, $bookId, $userId, $shelf_id);
+
+  } else {
+    $bookIdList = $_POST['bookIdList'];
+    foreach($bookIdList as $bookId){
+      deleteFunc($mysql, $bookId, $userId, $shelf_id);
+    }
   }
-  // 登録に成功したので200を返却する
   header("HTTP/1.1 200 OK");
   exit();
 } else {
   header("HTTP/1.1 502 Bad Gateway");
   exit();
 }
+
+function deleteFunc($mysql, $bookId, $userId, $shelf_id){
+  try {
+    delete_bookmarks($mysql, $userId, $bookId, $shelf_id);
+  } catch (PDOException $e) {
+    header("HTTP/1.1 500 Internal Server Error");
+    exit();
+  }
+}
+
 
 ?>

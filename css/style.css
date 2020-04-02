@@ -179,7 +179,7 @@ html {
 }
 
 .sm-bookshelf > div {
-  padding-top: 30px;
+  padding-top: 20px;
   padding-bottom: 10px;
 }
 
@@ -380,4 +380,9 @@ html {
 .sm-genre-label {
   margin: 0px 10px;
   border-bottom: 1px dashed gray;
+}
+
+.sm-radio{
+  line-height: 24px;
+  vertical-align: middle;
 }
