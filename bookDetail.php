@@ -97,6 +97,9 @@ if(isset($_SESSION['userId'])){
               foreach($bookDetail as $detail){
                 print "<div><a href='/bookEpisode.php?episodeNo=${detail['episode_no']}'>${detail['episode_title']}</a></div>";
               };
+              if(count($bookDetail) == 0){
+                print 'DB容量削減のため、<a href="/bookDetail.php?bookId=5">此方</a>だけにデータを仕込んでいます';
+              }
               ?>
             </div>
           </div>

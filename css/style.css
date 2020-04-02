@@ -376,3 +376,8 @@ a.sm-link-invalid{
 .sm-bookmarks-state{
   margin-left: 5px
 }
+
+.sm-genre-label {
+  margin: 0px 10px;
+  border-bottom: 1px dashed gray;
+}

@@ -11,7 +11,7 @@ include("components/database_access/genre.php");
 
 // ジャンルエリアの動的生成に使うため、先にジャンル一覧のみ取得しておく
 $genreList = get_genre_list($mysql);
-
+$genre = $_GET['genre'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,10 +43,21 @@ $genreList = get_genre_list($mysql);
     <!-- 本体 -->
     <div class="uk-container uk-container-expand">
       <div class="uk-flex uk-flex-center uk-margin-medium-top uk-margin-medium-bottom">
-        <div class="uk-flex uk-flex-column">
+        <div class="uk-flex uk-flex-column ">
+          <div class="uk-background-default">
+            <h4 class=" sm-genre-label">
+              <?php
+                if($genre == 'all'){
+                  print '全てのジャンルの本一覧';
+                } else {
+                  print 'ジャンル：' . get_genre_name($mysql, $genre) . ' の本一覧';
+                }
+              ?>
+            </h4>
+          </div>
           <div class="uk-margin-remove uk-padding-remove-horizontal uk-padding-remove-bottom sm-book-area uk-margin-top uk-flex-column">
           <?php
-            $genre = $_GET['genre'];
+
             print "<div class='uk-flex uk-flex-column book-genre' id='genre-${genre}'>";
             if($genre == 'all'){
               $books = get_all_genre_books($mysql);
