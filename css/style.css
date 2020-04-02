@@ -221,7 +221,7 @@ html {
   justify-content: center;
 }
 
-a.sm-link-invalid{
+.sm-link-invalid{
   pointer-events: none;
   color: gray;
 }
