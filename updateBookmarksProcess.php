@@ -14,15 +14,16 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUE
   }
 
   $userId = $_SESSION['userId'];
+  $shelfId = $_POST['shelfId'];
 
   if(isset($_POST['bookId'])){
     $bookId = $_POST['bookId'];
-    deleteFunc($mysql, $bookId, $userId);
+    updateFunc($mysql, $bookId, $userId, $shelfId);
 
   } else {
     $bookIdList = $_POST['bookIdList'];
     foreach($bookIdList as $bookId){
-      deleteFunc($mysql, $bookId, $userId);
+      updateFunc($mysql, $bookId, $userId, $shelfId);
     }
   }
   header("HTTP/1.1 200 OK");
@@ -32,9 +33,9 @@ if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUE
   exit();
 }
 
-function deleteFunc($mysql, $bookId, $userId){
+function updateFunc($mysql, $bookId, $userId, $shelfId){
   try {
-    delete_bookmarks($mysql, $userId, $bookId);
+    update_bookmarks($mysql, $userId, $bookId, $shelfId);
   } catch (PDOException $e) {
     header("HTTP/1.1 500 Internal Server Error");
     exit();

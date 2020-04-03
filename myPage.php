@@ -46,10 +46,17 @@ $userId = $_SESSION['userId'];
                 <button class="sm-button-link uk-button uk-button-default" id="modify-button">本棚を操作する</button>
                 <div class="uk-flex uk-flex-inline uk-flex-around uk-margin-small-top">
                   <span class="sm-radio">
-                  <input type="radio" name="modify-mode" value="delete" checked="checked">削除
+                  <input type="radio" name="modify-mode" class="uk-margin-remove" value="delete" checked="checked">削除
                   </span>
-                  <span class="sm-radio ">
-                    <input type="radio" name="modify-mode" class="uk-margin-right-auto"     value="move">移動
+                  <span class="sm-radio">
+                    <input type="radio" name="modify-mode" class="uk-margin-remove" value="move">移動
+                  </span>
+                  <span class="sm-radio">
+                    <select id="move-target">
+                      <option value="1">本棚1</option>
+                      <option value="2">本棚2</option>
+                      <option value="3">本棚3</option>
+                    </select>
                   </span>
                   </div>
               </div>
