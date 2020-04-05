@@ -21,12 +21,6 @@ if(isset($_SESSION['userId'])){
   }
   $isBookmarks = ($checkResult=='1') ? true : false;
 }
-
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,13 +56,13 @@ if(isset($_SESSION['userId'])){
         <?php include("components/advertising.php"); ?>
 
         <div class="sm-book-detail">
-          <h3><?php print $book[0]['book_title'] ?></h3>
+          <h3><?php print $book->book_title ?></h3>
           <div class="uk-flex uk-flex-column uk-margin-bottom sm-book-detail-area">
             <div class="uk-flex uk-flex-inline">
-              <img class="sm-book-detail-img" src=<?php print $book[0]['cover_img']; ?> />
+              <img class="sm-book-detail-img" src=<?php print $book->cover_img; ?> />
               <div class="uk-flex uk-flex-column sm-book-detail-episode-one uk-flex-between">
                 <div class="uk-flex uk-flex-inline">
-                  <div>全<?php print $book[0]['total_episodes']; ?>話</span></div>
+                  <div>全<?php print $book->total_episodes ?>話</div>
                   <?php
                   if($isBookmarks){
                     print '<span class="sm-bookmarks-state">★</span>';
@@ -80,22 +74,22 @@ if(isset($_SESSION['userId'])){
                 <a class="sm-button-link uk-button uk-button-default" href="/bookEpisode.php?episodeNo=1">第1話を読む</a>
                 <?php
                   if($isBookmarks){
-                    print '<button class="uk-button uk-button-default" id="delete-bookmarks" bookId=' . $book[0]['book_id'] . '>本棚から削除</button>';
-                    print '<button class="uk-button uk-button-default uk-hidden" id="add-bookmarks" bookId=' . $book[0]['book_id'] . '>本棚に追加</button>';
+                    print '<button class="uk-button uk-button-default" id="delete-bookmarks" bookId="{$book->book_id}">本棚から削除</button>';
+                    print '<button class="uk-button uk-button-default uk-hidden" id="add-bookmarks" bookId="{$book->book_id}">本棚に追加</button>';
                   } else {
-                    print '<button class="uk-button uk-button-default uk-hidden" id="delete-bookmarks" bookId=' . $book[0]['book_id'] . '>本棚から削除</button>';
-                    print '<button class="uk-button uk-button-default" id="add-bookmarks" bookId=' . $book[0]['book_id'] . '>本棚に追加</button>';
+                    print '<button class="uk-button uk-button-default uk-hidden" id="delete-bookmarks" bookId="{$book->book_id}">本棚から削除</button>';
+                    print '<button class="uk-button uk-button-default" id="add-bookmarks" bookId="{$book->book_id}">本棚に追加</button>';
                   }
                 ?>
               </div>
             </div>
             <div class="sm-book-detail-synopsis">
-              <?php print $book[0]['synopsis'] ?>
+              <?php print $book->synopsis ?>
             </div>
             <div class="sm-book-detail-episodes">
               <?php
               foreach($bookDetail as $detail){
-                print "<div><a href='/bookEpisode.php?episodeNo=${detail['episode_no']}'>${detail['episode_title']}</a></div>";
+                print "<div><a href='/bookEpisode.php?episodeNo=${detail['episode_no']}&bookId={$book->book_id}'>${detail['episode_title']}</a></div>";
               };
               if(count($bookDetail) == 0){
                 print 'DB容量削減のため、<a href="/bookDetail.php?bookId=5">此方</a>だけにデータを仕込んでいます';

@@ -386,3 +386,54 @@ html {
   line-height: 24px;
   vertical-align: middle;
 }
+
+.sm-book-episode{
+  border: 1px solid gray;
+  background-color: #fff;
+  width: 700px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.sm-book-episode > div {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+.sm-book-episode-header{
+  margin-top: 10px;
+  display: flex;
+}
+
+.sm-book-episode-header > h4{
+  margin-bottom: 0px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+.sm-book-episode-header > button{
+  margin-left: auto;
+}
+
+.sm-book-episode-pagination {
+  margin: 10px 0px 10px 0px;
+  padding: 8px 0px;
+  border-top: 1px dashed gray;
+  border-bottom: 1px dashed gray;
+}
+
+.sm-book-episode-pagination > div {
+  margin: 0px 10px;
+  text-align: center;
+}
+
+.sm-book-episode-pagination > div:first-child {
+  border-right: 1px solid gray;
+}
+
+.sm-book-episode-pagination > div:last-child {
+  border-left: 1px solid gray;
+}
+.sm-book-episode-content {
+  word-break: break-all;
+}

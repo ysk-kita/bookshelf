@@ -82,11 +82,11 @@ $(function(){
       mode = $('input[name="modify-mode"]:checked').val();
 
       // 移動先の本棚番号を取得
-      shelf_id = $('#move-target option:selected').val();
+      shelfId = $('#move-target option:selected').val();
 
       var data = {
         bookIdList: idList,
-        shelfId: shelf_id
+        shelfId: shelfId
       };
 
       if(mode=="delete"){

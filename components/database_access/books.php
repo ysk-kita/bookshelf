@@ -33,7 +33,7 @@ function get_book_info($pdo, $book_id){
   $prepare = $pdo->prepare($sql);
   $prepare->bindValue(':book_id', $book_id, PDO::PARAM_INT);
   $prepare->execute();
-  return $prepare->fetchAll();
+  return $prepare->fetchObject();
 }
 
 /** 指定した本の章リストを取得 */
@@ -45,5 +45,22 @@ function get_book_detail_list($pdo, $book_id){
   return $prepare->fetchAll();
 }
 
+/** 指定した本の章の中身を取得 */
+function get_book_episode($pdo, $book_id, $episode_no){
+  $sql = file_get_contents("sql/process/books/get_book_episode.sql");
+  $prepare = $pdo->prepare($sql);
+  $prepare->bindValue(':book_id', $book_id, PDO::PARAM_INT);
+  $prepare->bindValue(':episode_no', $episode_no, PDO::PARAM_INT);
+  $prepare->execute();
+  return $prepare->fetchObject();
+}
+
+function get_last_episode_no($pdo, $book_id){
+  $sql = file_get_contents("sql/process/books/get_last_episode_no.sql");
+  $prepare = $pdo->prepare($sql);
+  $prepare->bindValue(':book_id', $book_id, PDO::PARAM_INT);
+  $prepare->execute();
+  return $prepare->fetchColumn();
+}
 
 ?>
