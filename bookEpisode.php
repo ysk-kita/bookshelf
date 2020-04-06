@@ -64,11 +64,11 @@ $lastEpisode = get_last_episode_no($mysql, $_GET['bookId']);
             </h4>
             <?php
               if($isBookmarks){
-                print "<button class='uk-button uk-button-default' id='delete-bookmarks' bookId='{$book->book_id}'>本棚から削除</button>";
-                print "<button class='uk-button uk-button-default uk-hidden' id='add-bookmarks' bookId='{$book->book_id}'>本棚に追加</button>";
+                print "<button class='uk-button uk-button-default' id='delete-bookmarks' bookId='{$detail->book_id}'>本棚から削除</button>";
+                print "<button class='uk-button uk-button-default uk-hidden' id='add-bookmarks' bookId='{$detail->book_id}'>本棚に追加</button>";
               } else {
-                print "<button class='uk-button uk-button-default uk-hidden' id='delete-bookmarks' bookId='{$book->book_id}'>本棚から削除</button>";
-                print "<button class='uk-button uk-button-default' id='add-bookmarks' bookId='{$book->book_id}'>本棚に追加</button>";
+                print "<button class='uk-button uk-button-default uk-hidden' id='delete-bookmarks' bookId='{$detail->book_id}'>本棚から削除</button>";
+                print "<button class='uk-button uk-button-default' id='add-bookmarks' bookId='{$detail->book_id}'>本棚に追加</button>";
               }
             ?>
           </div>
