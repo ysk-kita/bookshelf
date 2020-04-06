@@ -101,10 +101,10 @@ $genre = $_GET['genre'];
             </span>
             <?php
             if ($pages == $pageCount){
-              print "<span><a class='sm-link-invalid' href='#'>&gt;&gt;next</a></span>";
+              print "<span><a class='sm-link-invalid' href='#'>next&gt;&gt;</a></span>";
             } else {
               $next = $pages + 1;
-              print "<span><a href='/genreList.php?genre=${genre}&pages=${next}'>&gt;&gt;next</a></span>";
+              print "<span><a href='/genreList.php?genre=${genre}&pages=${next}'>next&gt;&gt;</a></span>";
             }
             ?>
           </div>
