@@ -71,14 +71,14 @@ if(isset($_SESSION['userId'])){
                   }
                   ?>
                 </div>
-                <a class="sm-button-link uk-button uk-button-default" href="/bookEpisode.php?episodeNo=1">第1話を読む</a>
                 <?php
+                  print "<a class='sm-button-link uk-button uk-button-default' href='/bookEpisode.php?episodeNo=1&bookId={$book->book_id}'>第1話を読む</a>";
                   if($isBookmarks){
-                    print '<button class="uk-button uk-button-default" id="delete-bookmarks" bookId="{$book->book_id}">本棚から削除</button>';
-                    print '<button class="uk-button uk-button-default uk-hidden" id="add-bookmarks" bookId="{$book->book_id}">本棚に追加</button>';
+                    print "<button class='uk-button uk-button-default' id='delete-bookmarks' bookId='{$book->book_id}'>本棚から削除</button>";
+                    print "<button class='uk-button uk-button-default uk-hidden' id='add-bookmarks' bookId='{$book->book_id}'>本棚に追加</button>";
                   } else {
-                    print '<button class="uk-button uk-button-default uk-hidden" id="delete-bookmarks" bookId="{$book->book_id}">本棚から削除</button>';
-                    print '<button class="uk-button uk-button-default" id="add-bookmarks" bookId="{$book->book_id}">本棚に追加</button>';
+                    print "<button class='uk-button uk-button-default uk-hidden' id='delete-bookmarks' bookId='{$book->book_id}'>本棚から削除</button>";
+                    print "<button class='uk-button uk-button-default' id='add-bookmarks' bookId='{$book->book_id}'>本棚に追加</button>";
                   }
                 ?>
               </div>
