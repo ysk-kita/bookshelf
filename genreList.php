@@ -30,8 +30,7 @@ $genre = $_GET['genre'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.js"></script>
 
-    <link rel="stylesheet" href="css/pulldown.css"/>
-    <script type="text/javascript" src="js/pulldown.js"></script>
+    <script type="text/javascript" src="js/genreList.js"></script>
 
     <link rel="stylesheet" href="css/style.css"/>
   </head>
@@ -45,7 +44,7 @@ $genre = $_GET['genre'];
       <div class="uk-flex uk-flex-center uk-margin-medium-top uk-margin-medium-bottom">
         <div class="uk-flex uk-flex-column ">
           <div class="uk-background-default">
-            <h4 class=" sm-genre-label">
+            <h4 class="sm-genre-label uk-flex uk-flex-between">
               <?php
                 if($genre == 'all'){
                   print '全てのジャンルの本一覧';
@@ -53,6 +52,17 @@ $genre = $_GET['genre'];
                   print 'ジャンル：' . get_genre_name($mysql, $genre) . ' の本一覧';
                 }
               ?>
+              <span class="sm-genre-selector">
+                <p>ジャンル変更：</p>
+                <select id="genre-selector" placeholder="全ジャンル選択">
+                  <option genre-text="総合" value="all">総合</option>
+                  <?php
+                  foreach($genreList as $genres){
+                    print "<option genre-text='${genres['genre_name']}' value='${genres['genre_path']}'>${genres['genre_name']}</option>";
+                  }
+                  ?>
+                </select>
+              </span>
             </h4>
           </div>
           <div class="uk-margin-remove uk-padding-remove-horizontal uk-padding-remove-bottom sm-book-area uk-margin-top uk-flex-column">

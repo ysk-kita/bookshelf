@@ -379,6 +379,7 @@ html {
 
 .sm-genre-label {
   margin: 0px 10px;
+  padding-bottom: 2px;
   border-bottom: 1px dashed gray;
 }
 
@@ -436,4 +437,19 @@ html {
 }
 .sm-book-episode-content {
   word-break: break-all;
+}
+
+.sm-genre-selector{
+  display: flex;
+  align-items: center;
+}
+
+.sm-genre-selector select{
+  margin-top: 2px;
+  padding-bottom: 3px;
+}
+
+.sm-genre-selector > p{
+  font-size: 14px;
+  margin: 0px;
 }
